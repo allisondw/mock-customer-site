@@ -1,0 +1,9 @@
+@use "partials/typography" as *; 
+@use "partials/variables" as *;
+
+body {
+    font-family: $font;
+    margin: 0;
+    padding: 0;
+}
+
