@@ -1,5 +1,6 @@
 @use "partials/typography" as *; 
 @use "partials/variables" as *;
+@use "partials/mixins" as *;
 
 body {
     font-family: $font;
@@ -12,11 +13,34 @@ body {
 }
 
 header {
-
-
+    margin: 0;
+    width: 100%;
+    background-color: $primary-color;
+    color: $secondary-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     // @include tablet {}
     // @include desktop {}
 
+   
+    nav {
+        .title--h5 {
+            @include title;
+            margin: 0;
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+        }
+        li {
+            text-decoration: none;
+            color: $secondary-color;
+        }
+    }
+
+    
 }
 
 .hero {

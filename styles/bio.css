@@ -20,4 +20,32 @@ body {
   font-family: AvenirNextLTPro-Regular;
   margin: 0;
   padding: 0;
-}/*# sourceMappingURL=main.css.map */
+}
+
+header {
+  margin: 0;
+  width: 100%;
+  background-color: #323232;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header nav .title--h5 {
+  font-family: AvenirNextLTPro-Regular;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+}
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+header nav li {
+  text-decoration: none;
+  color: #FFFFFF;
+}/*# sourceMappingURL=bio.css.map */
