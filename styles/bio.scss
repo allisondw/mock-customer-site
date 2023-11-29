@@ -14,17 +14,19 @@ body {
 
 header {
     margin: 0;
-    width: 100%;
+    width: 100vw;
     background-color: $primary-color;
     color: $secondary-color;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 1rem;
     // @include tablet {}
     // @include desktop {}
 
    
     nav {
+
         .title--h5 {
             @include title;
             margin: 0;
@@ -52,7 +54,10 @@ header {
 }
 
 .about {
-
+    &__image {
+        text-align: center;
+        width: 90vw;
+    }
     // @include tablet {}
     // @include desktop {}
 

@@ -24,18 +24,19 @@ body {
 
 header {
   margin: 0;
-  width: 100%;
+  width: 100vw;
   background-color: #323232;
   color: #FFFFFF;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 1rem;
 }
 header nav .title--h5 {
   font-family: AvenirNextLTPro-Regular;
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: 100;
+  font-weight: normal;
   text-transform: uppercase;
   text-align: center;
   margin: 0;
@@ -48,4 +49,9 @@ header nav ul {
 header nav li {
   text-decoration: none;
   color: #FFFFFF;
+}
+
+.about__image {
+  text-align: center;
+  width: 90vw;
 }/*# sourceMappingURL=bio.css.map */
