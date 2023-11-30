@@ -12,6 +12,10 @@ body {
 
 }
 
+main {
+    padding: 1rem;
+}
+
 header {
     margin: 0;
     width: 100vw;
@@ -20,26 +24,38 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
+    
     // @include tablet {}
     // @include desktop {}
 
    
     nav {
+        width: 90vw;
+        padding: 1rem;
 
         .title--h5 {
             @include title;
             margin: 0;
+            padding-bottom: 1rem;
         }
         ul {
+            text-align: center;
             list-style: none;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
+            margin: auto;
         }
         li {
+            @include subheader;
             text-decoration: none;
             color: $secondary-color;
+            width: 50%;
+            text-align: center;
         }
+    }
+
+    &__nav--link {
+        // padding: 1rem 2rem;
     }
 
     
@@ -54,9 +70,32 @@ header {
 }
 
 .about {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__intro {
+        padding: 1rem;
+    }
+    &__title{
+        width: 90vw;
+        padding-left: 1rem;
+    }
+    &__blurb {
+        // mixin for font style
+        @mixin blurb {
+            line-height: 1.125rem;
+        }
+
+        font-family: $font-demi;
+        padding: 1rem 1rem 0 1rem;
+        margin: 0;
+
+    }
     &__image {
-        
-        width: 100vw;
+        margin: 0 1rem;
+        width: 90vw;
     }
     // @include tablet {}
     // @include desktop {}
@@ -67,7 +106,8 @@ header {
     
 
     &__image {
-        width: 100vw;
+        width: 90vw;
+        margin: 1rem auto 0;
     }
     // @include tablet {}
     // @include desktop {}
@@ -75,7 +115,10 @@ header {
 }
 
 footer {
-
+    margin: 0;
+    padding: 1rem;
+    color: $secondary-color;
+    background-color: $primary-color;
     // @include tablet {}
     // @include desktop {}
 
