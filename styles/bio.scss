@@ -64,7 +64,11 @@ header {
 }
 
 .gallery {
+    
 
+    &__image {
+        width: 100vw;
+    }
     // @include tablet {}
     // @include desktop {}
 
