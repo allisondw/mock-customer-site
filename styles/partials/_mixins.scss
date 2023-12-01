@@ -3,12 +3,16 @@
 
 @mixin page-header {
     font-family: $font;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 100;
     text-transform: uppercase;
     text-align: center;
     margin: 0;
+    @media (min-width: $tablet) {
+        font-size: 3.75rem;
+        line-height: 4.25rem;
+    }
 }
 
 @mixin section-header {
@@ -16,6 +20,8 @@
     line-height: 2rem;
     font-family: $font-demi;
     margin: 0;
+    padding-top: $more-padding-mobile;
+    padding-bottom: $less-padding-mobile;
 }
 
 @mixin sub-header {
@@ -42,4 +48,29 @@
     line-height: 1.35rem;
     font-weight: 400;
     margin: 0;
+}
+
+@mixin section-padding {
+    padding: $less-padding-mobile;
+}
+
+@mixin headline-padding-mobile {
+    padding-top: $more-padding-mobile;
+    padding-bottom: $less-padding-mobile;
+}
+
+@mixin headline-padding-tablet {
+    padding-top: $more-padding-tablet;
+    padding-bottom: $less-padding-tablet;
+}
+
+@mixin hover-effect {
+    &:hover {
+        color: $secondary-color;
+        border-bottom: $underline;
+    }
+}
+
+@mixin inactive-link {
+    
 }

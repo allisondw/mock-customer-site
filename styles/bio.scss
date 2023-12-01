@@ -2,21 +2,22 @@
 @use "partials/variables" as *;
 @use "partials/mixins" as *;
 
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
 body {
     font-family: $font;
     margin: 0;
     padding: 0;
-
-    // @include tablet {}
-    // @include desktop {}
-
 }
 
 main {
     // padding: 1rem;
 }
 
-header {
+.header {
     margin: 0;
     width: 100vw;
     background-color: $primary-color;
@@ -25,18 +26,13 @@ header {
     flex-direction: column;
     align-items: center;
     
-    // @include tablet {}
-    // @include desktop {}
-
-   
-    nav {
-        width: 90vw;
-        padding: 1rem;
+    &__nav {
+        width: 100vw;
 
         .title--h5 {
             @include page-header;
-            margin: 0;
-            padding-bottom: 1rem;
+            margin: 0 auto;
+            padding-top: $less-padding-mobile;
         }
         ul {
             text-align: center;
@@ -46,35 +42,53 @@ header {
             margin: auto;
             padding: 0;
         }
-        li {
+        &--bio,
+        &--shows {
             @include sub-header;
             width: 50%;
             text-align: center;
+            padding-bottom: $less-padding-mobile;
+            @include hover;
+    
         }
-        a {
+        &--link {
+            width: 100%;
             text-decoration: none;
-            color: $secondary-color;
-
+            color: $secondary-color;      
         }
-        // padding: 1rem 2rem;
+        &--active {
+            border-bottom: $underline;
+        }
     }
-
-    
-
-    
 }
 
-.hero {
-    
-
+.hero { 
     &__bg-img {
+        position: relative;
         background-image: url(../assets/Images/hero-bio.jpg);
         background-size: cover;
+        
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
     }
-    
-    // @include tablet {}
-    // @include desktop {}
 
+    &__h1 {
+        @include section-header;
+        color: white;
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+        padding-left: $less-padding-mobile;
+        position: relative;
+        z-index: 2;
+    }
 }
 
 .about {
@@ -83,24 +97,21 @@ header {
     flex-direction: column;
     align-items: center;
 
-    &__intro {
-        padding: 1rem 1rem 0 1rem;
-    }
     &__title{
         @include section-header;
         width: 90vw;
-
-        padding: 1.5rem 1rem 1rem;
+        padding-top: $more-padding-mobile;
+        padding-bottom: $less-padding-mobile;
     }
     &__blurb {
         @include sub-header;
         font-family: $font-demi;
-        padding: 1.5rem 1rem 0;
+        // padding: 1.5rem 1rem 0;
     } 
  
     &__image {
-        margin: 0 1rem;
         width: 90vw;
+        padding-bottom: $less-padding-mobile;
     }
     &__h3 {
         @include sub-header;
@@ -111,31 +122,24 @@ header {
         @include body-copy;
         padding-bottom: 1rem;
     }
-    // @include tablet {}
-    // @include desktop {}
-
 }
 .gallery {
-    padding: 1.5rem 1rem 1rem;
+    padding: 0 $less-padding-mobile;
     background-color: $alt-tertiary-color;
 
     &__title {
         @include section-header;
- 
     }
 
     &__image {
         width: 90vw;
-        margin: 1rem auto 0;
+        padding-bottom: $less-padding-mobile;
     }
-    // @include tablet {}
-    // @include desktop {}
-
 }
 
 .footer {
     margin: 0;
-    padding: 1rem;
+    padding: 0 $less-padding-mobile $less-padding-mobile;
     color: $secondary-color;
     background-color: $primary-color;
 
@@ -143,8 +147,14 @@ header {
         @include section-header;
         padding: 1.5rem 0 1rem;
     }
-    // @include tablet {}
-    // @include desktop {}
+
+    &__socials {
+        height: auto;
+
+        &--icon {
+            padding: 0 $less-padding-mobile $less-padding-mobile 0;
+        }
+    }
     .contact {
         &__name {
             @include sub-header;

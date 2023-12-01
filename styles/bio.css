@@ -16,13 +16,17 @@
   font-weight: 700;
   font-style: bold;
 }
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: AvenirNextLTPro-Regular;
   margin: 0;
   padding: 0;
 }
 
-header {
+.header {
   margin: 0;
   width: 100vw;
   background-color: #323232;
@@ -31,22 +35,27 @@ header {
   flex-direction: column;
   align-items: center;
 }
-header nav {
-  width: 90vw;
-  padding: 1rem;
+.header__nav {
+  width: 100vw;
 }
-header nav .title--h5 {
+.header__nav .title--h5 {
   font-family: AvenirNextLTPro-Regular;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 100;
   text-transform: uppercase;
   text-align: center;
   margin: 0;
-  margin: 0;
-  padding-bottom: 1rem;
+  margin: 0 auto;
+  padding-top: 1rem;
 }
-header nav ul {
+@media (min-width: 768px) {
+  .header__nav .title--h5 {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+  }
+}
+.header__nav ul {
   text-align: center;
   list-style: none;
   display: flex;
@@ -54,22 +63,52 @@ header nav ul {
   margin: auto;
   padding: 0;
 }
-header nav li {
+.header__nav--bio, .header__nav--shows {
   font-size: 0.875rem;
   line-height: 1.5rem;
   font-weight: 200;
   margin: 0;
   width: 50%;
   text-align: center;
+  padding-bottom: 1rem;
 }
-header nav a {
+.header__nav--link {
+  width: 100%;
   text-decoration: none;
   color: #FFFFFF;
 }
+.header__nav--active {
+  border-bottom: 0.25rem solid #FFFFFF;
+}
 
 .hero__bg-img {
+  position: relative;
   background-image: url(../assets/Images/hero-bio.jpg);
   background-size: cover;
+}
+.hero__bg-img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.hero__h1 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-family: AvenirNextLTPro-Demi;
+  margin: 0;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  color: white;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  padding-left: 1rem;
+  position: relative;
+  z-index: 2;
 }
 
 .about {
@@ -78,16 +117,16 @@ header nav a {
   flex-direction: column;
   align-items: center;
 }
-.about__intro {
-  padding: 1rem 1rem 0 1rem;
-}
 .about__title {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: AvenirNextLTPro-Demi;
   margin: 0;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
   width: 90vw;
-  padding: 1.5rem 1rem 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
 }
 .about__blurb {
   font-size: 0.875rem;
@@ -95,11 +134,10 @@ header nav a {
   font-weight: 200;
   margin: 0;
   font-family: AvenirNextLTPro-Demi;
-  padding: 1.5rem 1rem 0;
 }
 .about__image {
-  margin: 0 1rem;
   width: 90vw;
+  padding-bottom: 1rem;
 }
 .about__h3 {
   font-size: 0.875rem;
@@ -117,7 +155,7 @@ header nav a {
 }
 
 .gallery {
-  padding: 1.5rem 1rem 1rem;
+  padding: 0 1rem;
   background-color: #FAFAFA;
 }
 .gallery__title {
@@ -125,15 +163,17 @@ header nav a {
   line-height: 2rem;
   font-family: AvenirNextLTPro-Demi;
   margin: 0;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
 }
 .gallery__image {
   width: 90vw;
-  margin: 1rem auto 0;
+  padding-bottom: 1rem;
 }
 
 .footer {
   margin: 0;
-  padding: 1rem;
+  padding: 0 1rem 1rem;
   color: #FFFFFF;
   background-color: #323232;
 }
@@ -142,7 +182,15 @@ header nav a {
   line-height: 2rem;
   font-family: AvenirNextLTPro-Demi;
   margin: 0;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
   padding: 1.5rem 0 1rem;
+}
+.footer__socials {
+  height: auto;
+}
+.footer__socials--icon {
+  padding: 0 1rem 1rem 0;
 }
 .footer .contact__name, .footer .contact__company {
   font-size: 0.875rem;
@@ -171,7 +219,7 @@ header nav a {
 }
 .footer .title--h5 {
   font-family: AvenirNextLTPro-Regular;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 100;
   text-transform: uppercase;
@@ -181,6 +229,12 @@ header nav a {
   padding-top: 1.5rem;
   padding-bottom: 1rem;
   text-align: left;
+}
+@media (min-width: 768px) {
+  .footer .title--h5 {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+  }
 }
 .footer__copyright {
   font-size: 0.625rem;
