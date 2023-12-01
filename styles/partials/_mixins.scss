@@ -1,16 +1,45 @@
 @use "./typography" as *;
 @use "./variables" as *;
 
-@mixin title {
+@mixin page-header {
     font-family: $font;
     font-size: 1.75rem;
     line-height: 2rem;
     font-weight: 100;
     text-transform: uppercase;
     text-align: center;
+    margin: 0;
 }
 
-@mixin subheader {
+@mixin section-header {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-family: $font-demi;
+    margin: 0;
+}
+
+@mixin sub-header {
     font-size: 0.875rem;
-    line-height: 1.375rem;
+    line-height: 1.5rem;
+    font-weight: 200;
+    margin: 0;
+
+    // @media  (min-width: $tablet) {
+    //     font-size: 1.5rem;
+    //     line-height: 2rem;
+    //     font-weight: 200;
+    // }
+}
+
+@mixin body-copy {
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    margin: 0;
+}
+
+@mixin label-or-button {
+    font-size: 0.625rem;
+    line-height: 1.35rem;
+    font-weight: 400;
+    margin: 0;
 }

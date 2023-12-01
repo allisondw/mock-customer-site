@@ -13,7 +13,7 @@ body {
 }
 
 main {
-    padding: 1rem;
+    // padding: 1rem;
 }
 
 header {
@@ -34,7 +34,7 @@ header {
         padding: 1rem;
 
         .title--h5 {
-            @include title;
+            @include page-header;
             margin: 0;
             padding-bottom: 1rem;
         }
@@ -44,25 +44,33 @@ header {
             display: flex;
             justify-content: space-around;
             margin: auto;
+            padding: 0;
         }
         li {
-            @include subheader;
-            text-decoration: none;
-            color: $secondary-color;
+            @include sub-header;
             width: 50%;
             text-align: center;
         }
-    }
+        a {
+            text-decoration: none;
+            color: $secondary-color;
 
-    &__nav--link {
+        }
         // padding: 1rem 2rem;
     }
+
+    
 
     
 }
 
 .hero {
     
+
+    &__bg-img {
+        background-image: url(../assets/Images/hero-bio.jpg);
+        background-size: cover;
+    }
     
     // @include tablet {}
     // @include desktop {}
@@ -70,40 +78,51 @@ header {
 }
 
 .about {
-    
+    padding: 0 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 
     &__intro {
-        padding: 1rem;
+        padding: 1rem 1rem 0 1rem;
     }
     &__title{
+        @include section-header;
         width: 90vw;
-        padding-left: 1rem;
+
+        padding: 1.5rem 1rem 1rem;
     }
     &__blurb {
-        // mixin for font style
-        @mixin blurb {
-            line-height: 1.125rem;
-        }
-
+        @include sub-header;
         font-family: $font-demi;
-        padding: 1rem 1rem 0 1rem;
-        margin: 0;
-
-    }
+        padding: 1.5rem 1rem 0;
+    } 
+ 
     &__image {
         margin: 0 1rem;
         width: 90vw;
+    }
+    &__h3 {
+        @include sub-header;
+        padding-top: 1.5rem;
+        padding-bottom: 1rem;
+    }
+    &__bio {
+        @include body-copy;
+        padding-bottom: 1rem;
     }
     // @include tablet {}
     // @include desktop {}
 
 }
-
 .gallery {
-    
+    padding: 1.5rem 1rem 1rem;
+    background-color: $alt-tertiary-color;
+
+    &__title {
+        @include section-header;
+ 
+    }
 
     &__image {
         width: 90vw;
@@ -114,12 +133,50 @@ header {
 
 }
 
-footer {
+.footer {
     margin: 0;
     padding: 1rem;
     color: $secondary-color;
     background-color: $primary-color;
+
+    &__title {
+        @include section-header;
+        padding: 1.5rem 0 1rem;
+    }
     // @include tablet {}
     // @include desktop {}
+    .contact {
+        &__name {
+            @include sub-header;
+            font-family: $font-demi;
+            padding: 0;
+            line-height: 1.25rem;
+        }
+        &__company {
+            @extend .contact__name;
+        }
+        &__location {
+            @include body-copy;
+            padding: 1rem 0;
+        }
+        &__link {
+            text-decoration: none;
+            color: $secondary-color;
+        }
+        &__email {
+            @include body-copy;
+            padding-bottom: 1.5rem;
+        }
+    }
 
+    .title--h5 {
+        @include page-header;
+        margin: 0;
+        padding-top: 1.5rem;
+        padding-bottom: 1rem;
+        text-align: left;
+    }
+    &__copyright {
+        @include label-or-button;
+    }
 }
