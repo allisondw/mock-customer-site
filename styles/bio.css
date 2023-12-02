@@ -63,24 +63,88 @@ body {
   margin: auto;
   padding: 0;
 }
-.header__nav--bio, .header__nav--shows {
+.header__nav--bio {
   font-size: 0.875rem;
   line-height: 1.5rem;
-  font-weight: 200;
   margin: 0;
-  width: 50%;
+  width: 100%;
   text-align: center;
-  padding-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  font-weight: 200;
+  border-bottom: transparent solid 0.25rem;
+  font-family: AvenirNextLTPro-Demi;
+  font-weight: 400;
+  border-bottom: 0.25rem solid #FFFFFF;
+  color: #FFFFFF;
+  letter-spacing: 0.05rem;
+}
+.header__nav--bio:hover {
+  color: #FFFFFF;
+  border-bottom: 0.25rem solid #FFFFFF;
+  padding-bottom: 0.75rem;
+  transition: 0.25s ease;
+  font-weight: 400;
+}
+.header__nav--shows {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 0.75rem;
+  font-weight: 200;
+  border-bottom: transparent solid 0.25rem;
+}
+.header__nav--shows:hover {
+  color: #FFFFFF;
+  border-bottom: 0.25rem solid #FFFFFF;
+  padding-bottom: 0.75rem;
+  transition: 0.25s ease;
+  font-weight: 400;
 }
 .header__nav--link {
   width: 100%;
   text-decoration: none;
-  color: #FFFFFF;
+  color: #FAFAFA;
 }
 .header__nav--active {
-  border-bottom: 0.25rem solid #FFFFFF;
+  font-weight: 400;
 }
 
+@media screen and (min-width: 768px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .header__nav {
+    width: 100vw;
+  }
+  .header__nav .title--h5 {
+    font-family: AvenirNextLTPro-Regular;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    margin: 0 auto;
+    padding-top: 1rem;
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 768px) {
+  .header__nav .title--h5 {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .header__nav ul {
+    text-align: center;
+    list-style: none;
+    display: flex;
+  }
+}
 .hero__bg-img {
   position: relative;
   background-image: url(../assets/Images/hero-bio.jpg);
@@ -135,6 +199,13 @@ body {
   margin: 0;
   font-family: AvenirNextLTPro-Demi;
 }
+@media (min-width: 768px) {
+  .about__blurb {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 200;
+  }
+}
 .about__image {
   width: 90vw;
   padding-bottom: 1rem;
@@ -146,6 +217,13 @@ body {
   margin: 0;
   padding-top: 1.5rem;
   padding-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .about__h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 200;
+  }
 }
 .about__bio {
   font-size: 0.8125rem;
@@ -200,6 +278,13 @@ body {
   font-family: AvenirNextLTPro-Demi;
   padding: 0;
   line-height: 1.25rem;
+}
+@media (min-width: 768px) {
+  .footer .contact__name, .footer .contact__company {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 200;
+  }
 }
 .footer .contact__location {
   font-size: 0.8125rem;
