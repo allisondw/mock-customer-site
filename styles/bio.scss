@@ -1,227 +1,247 @@
-@use "partials/typography" as *; 
+@use "partials/global" as *;
 @use "partials/variables" as *;
 @use "partials/mixins" as *;
 
+/* 4.6875vw = NOT A RANDOM NUMBER responsive size for content to be correct width & have 36px padding when at 768px */
+/* 81.25vw = NOT A RANDOM NUMBER responsive size for content to be correct width & have 36px padding when at 1280px */
 
-*, *::before, *::after {
-    box-sizing: border-box;
-  }
+@font-face {
+  font-family: "AvenirNextLTPro-Regular";
+  src: url("../assets/Font/AvenirNextLTPro-Regular.otf") format("opentype"); /*CHECK THIS SRC*/
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AvenirNextLTPro-Demi";
+  src: url("../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AvenirNextLTPro-Regular";
+  src: url("../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
+  font-weight: 600;
+  font-style: bold;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 body {
-    font-family: $font;
-    margin: 0;
-    padding: 0;
-}
-
-
-.header {
-    margin: 0;
-    width: 100vw;
-    background-color: $primary-color;
-    color: $secondary-color;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    &__nav {
-        width: 100vw;
-
-        .title--h5 {
-            @include page-header;
-            margin: 0 auto;
-            padding-top: $less-padding-mobile;
-        }
-        ul {
-            text-align: center;
-            list-style: none;
-            display: flex;
-            justify-content: space-around;
-            margin: auto;
-            padding: 0;
-        }
-        &--bio {
-            @include header-link-active;
-        }
-        &--shows {
-            @include header-link-inactive;
-        }
-
-        &--link {
-            width: 100%;
-            @include link-style;    
-        }
-        &--active {
-            font-weight: 400;
-        }
-    }
+  @include font-regular;
+  margin: 0;
+  color: $primary-color;
 }
 @media screen and (min-width: $tablet) {
-    .header{
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-
-        &__nav {
-            width: 100vw;
-    
-            .title--h5 {
-                @include page-header;
-                margin: 0 auto;
-                padding-top: $less-padding-mobile;
-            }
-            ul {
-                text-align: center;
-                list-style: none;
-                display: flex;
-                // justify-content: space-around;
-                // margin: auto;
-                // padding: 0;
-            }
-            &--bio {
-                // @include header-link-active;
-            }
-            &--shows {
-                // @include header-link-inactive;
-            }
-    
-            // &--link {
-            //     width: 100%;
-            //     @include link-style;    
-            // }
-            // &--active {
-            //     font-weight: 400;
-            // }
-        }
-    }
-
+  h2 {
+    font-size: $px36;
+  }
+  h4,
+  p {
+    font-size: $px14;
+  }
+}
+p {
+  font-size: $px13;
+  line-height: 1.25rem;
+  margin: 0;
+  padding-bottom: 1rem;
+}
+h4 {
+  @include font-demi;
+  font-size: $px14;
+  margin: 0;
+  line-height: 1.25rem;
 }
 
+// HERO SECTION
+.hero {
+  &__bg-img {
+    padding-top: 5rem;
+    position: relative;
+    background-image: url(../assets/Images/hero-bio.jpg);
+    background-size: cover;
+    background-position: center;
 
-.hero { 
-    &__bg-img {
-        position: relative;
-        background-image: url(../assets/Images/hero-bio.jpg);
-        background-size: cover;
-        
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
     }
+    @media screen and (min-width: $tablet) {
+      display: flex;
+      align-items: center;
+      height: 45vh;
+    }
+    @media screen and (min-width: $desktop) {
+      height: 70vh;
+      padding-left: 8rem;
+    }
+  }
 
-    &__h1 {
-        @include section-header;
-        color: white;
-        padding-top: 6rem;
-        padding-bottom: 6rem;
-        padding-left: $less-padding-mobile;
-        position: relative;
-        z-index: 2;
+  &__h1 {
+    font-size: $px24;
+    line-height: 2rem;
+    margin: 0;
+    color: $secondary-color;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    padding-left: 1rem;
+    position: relative;
+    z-index: 2;
+    @media screen and (min-width: $tablet) {
+      @include font-demi;
+      font-size: $px60;
+      line-height: 4.25rem;
+      padding: 0 4.6875vw;
     }
+    @media screen and (min-width: $desktop) {
+      padding: 0;
+    }
+  }
 }
-
+// ABOUT SECTION
 .about {
-    padding: 0 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  margin: 0;
+  padding: 0 1rem;
 
-    &__title{
-        @include section-header;
-        width: 90vw;
-        padding-top: $more-padding-mobile;
-        padding-bottom: $less-padding-mobile;
+  &__title {
+    margin: 0;
+    padding: 1.5rem 0 1rem;
+    @media screen and (min-width: $tablet) {
+      line-height: 2.75rem;
+      padding: 3rem 0 2.25rem;
     }
+  }
     &__blurb {
-        @include sub-header;
-        font-family: $font-demi;
-        // padding: 1.5rem 1rem 0;
-    } 
- 
+        @include font-demi;
+        margin: 0;
+        padding-bottom: 0;
+        @media screen and (min-width: $tablet) {
+            padding: 0 4.6875vw 0.75rem;
+            font-size: 1.35rem;
+            line-height: 2rem;
+            &--attrib {
+                font-size: $px16;
+                padding-bottom: 2.25rem;
+            }
+        }
+        @media screen and (min-width: $desktop) {
+            @include desktop-blurb;
+            &--attrib {
+                @include desktop-blurb;
+            }
+        }
+    }
     &__image {
         width: 90vw;
-        padding-bottom: $less-padding-mobile;
+        padding: 0 0 1rem;
+        @media screen and (min-width: $tablet) {
+            margin-bottom: 2.25rem;
+            padding: 0 4.6875vw;
+        }
+        @media screen and (min-width: $desktop) {
+            width: 81.25vw;
+            padding: 0 6rem;
+        }
     }
     &__h3 {
-        @include sub-header;
-        padding-top: 1.5rem;
-        padding-bottom: 1rem;
+      @include font-demi;
+      font-size: $px14;
+      margin: 0;
+      padding: 1.5rem 0 1rem;
+      @media screen and (min-width: $tablet) {
+        @include font-demi;
+        padding: 1.5rem 4.6875vw 0;
+        font-size: $px24;
+      }
+      @media screen and (min-width: $desktop) {
+        padding: 0;
+      }
     }
-    &__bio {
-        @include body-copy;
-        padding-bottom: 1rem;
+    &__text {
+        @media screen and (min-width: $tablet) {
+            display: flex;
+            gap: 2rem;
+            padding: 1.5rem 4.6875vw 0; 
+        }
+        @media screen and (min-width: $desktop) {
+            padding: 2rem 0 0;
+            &--container {
+                width: 81.25vw;
+                padding: 2rem 6rem 1rem;
+            }
+        }
+    }
+    @media screen and (min-width: $tablet) {
+        padding: 0 4.6875vw;
+    }
+    @media screen and (min-width: $desktop) {
+      padding: 0 8rem;
     }
 }
+
+// PHOTO GALLERY
 .gallery {
-    padding: 0 $less-padding-mobile;
-    background-color: $alt-tertiary-color;
+  background-color: $alt-tertiary-color;
 
-    &__title {
-        @include section-header;
-    }
-
-    &__image {
-        width: 90vw;
-        padding-bottom: $less-padding-mobile;
-    }
-}
-
-.footer {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    // padding: 0 1rem;
     margin: 0;
-    padding: 0 $less-padding-mobile $less-padding-mobile;
-    color: $secondary-color;
-    background-color: $primary-color;
-
-    &__title {
-        @include section-header;
-        padding: 1.5rem 0 1rem;
+    @media screen and (min-width: $tablet) {
+      flex-direction: row;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 90.625vw;
+      margin: 0 auto 2rem;
+      gap: 1.5rem;
+      padding: 0;
     }
-
-    &__socials {
-        height: auto;
-
-        &--icon {
-            padding: 0 $less-padding-mobile $less-padding-mobile 0;
-        }
+    @media screen and (min-width: $desktop) {
+      width: 81.25vw;
     }
-    .contact {
-        &__name {
-            @include sub-header;
-            font-family: $font-demi;
-            padding: 0;
-            line-height: 1.25rem;
-        }
-        &__company {
-            @extend .contact__name;
-        }
-        &__location {
-            @include body-copy;
-            padding: 1rem 0;
-        }
-        &__link {
-            text-decoration: none;
-            color: $secondary-color;
-        }
-        &__email {
-            @include body-copy;
-            padding-bottom: 1.5rem;
-        }
-    }
-
-    .title--h5 {
-        @include page-header;
+  }
+  &__title {
+    margin: 0;
+    padding: 1.5rem 1rem 1rem;
+    @media screen and (min-width: $tablet) {
+        padding: $px48 0 $px36;
         margin: 0;
-        padding-top: 1.5rem;
-        padding-bottom: 1rem;
-        text-align: left;
     }
-    &__copyright {
-        @include label-or-button;
+    @media screen and (min-width: $desktop) {
+      padding-left: 0;
     }
+  }
+  &__image {
+    width: 90vw;
+    @media screen and (min-width: $tablet) {
+      width: calc((90.625vw - 48px) / 3);
+    }
+    @media screen and (min-width: $desktop) {
+      width: calc((81.25vw - 48px) / 3);
+    }
+  }
+  @media screen and (min-width: $tablet) {
+    margin: 0 4.6875vw $px16;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 0 8rem;
+    margin: 0;
+  }
 }
+

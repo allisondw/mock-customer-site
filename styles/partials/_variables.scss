@@ -1,8 +1,4 @@
-@use "typography" as *;
 
-$font: AvenirNextLTPro-Regular;
-$font-demi: AvenirNextLTPro-Demi;
-$font-bold: AvenirNextLTPro-Bold;
 
 $primary-color: #323232;
 $secondary-color: #FFFFFF;
@@ -15,12 +11,13 @@ $alt-tertiary-color: #FAFAFA;
 $tablet: 768px;
 $desktop: 1280px;
 
-$more-padding-mobile: 1.5rem;
-$less-padding-mobile: 1rem;
-$more-padding-tablet: 3rem;
-$less-padding-tablet: 2rem;
 
-$all-padding: 1rem 1rem 1rem 0;
-
-$underline: .25rem solid $secondary-color;
-
+$px14: .875rem;
+$px13: .8125rem;
+$px60: 3.75rem;
+$px36: 2.25rem;
+$px24: 1.5rem;
+$px12: .75rem;
+$px10: .625rem;
+$px16: 1rem;
+$px48: 3rem;
