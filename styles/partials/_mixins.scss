@@ -1,0 +1,20 @@
+@use "./variables" as *;
+
+
+@mixin desktop-h-links-padding {
+    padding: 1.75rem 0;
+}
+
+@mixin desktop-blurb {
+    width: 81.25vw;
+    padding: 1rem 6rem 0;
+}
+
+@mixin tablet-nav-link {
+    padding: $px16;
+    display: inline;
+    margin: auto;
+    text-align: center;
+    width: 50vw;
+    color: $alt-tertiary-color;
+}

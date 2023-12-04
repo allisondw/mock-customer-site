@@ -1,0 +1,263 @@
+@use "partials/global" as *;
+@use "partials/variables" as *;
+@use "partials/mixins" as *;
+
+@font-face {
+  font-family: "AvenirNextLTPro-Regular";
+  src: url("../assets/Font/AvenirNextLTPro-Regular.otf") format("opentype"); /*CHECK THIS SRC*/
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AvenirNextLTPro-Demi";
+  src: url("../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AvenirNextLTPro-Regular";
+  src: url("../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
+  font-weight: 600;
+  font-style: bold;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  @include font-regular;
+  margin: 0;
+}
+@media screen and (min-width: $tablet) {
+  h2 {
+    @include font-demi;
+    font-size: $px36;
+  }
+  h4,
+  p {
+    font-size: $px14;
+  }
+}
+p {
+  font-size: $px13;
+  line-height: 1.25rem;
+  margin: 0;
+  padding-bottom: 1rem;
+}
+h4 {
+  @include font-demi;
+  font-size: $px14;
+  margin: 0;
+  line-height: 1.25rem;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  color: $secondary-color;
+  background-color: $primary-color;
+  margin: 0;
+  padding: 0 $px36;
+  width: 100vw;
+  position: fixed;
+  z-index: 999;
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0 4.6875vw 0;
+    width: 100vw;
+    align-items: center;
+    justify-content: baseline;
+    @media screen and (min-width: $tablet) {
+      flex-direction: row;
+      justify-content: left;
+    }
+    @media screen and (min-width: $desktop) {
+        padding-left: 0;
+    }
+    .title--h5 {
+        @include font-regular;
+        text-transform: uppercase;
+        font-size: $px24;
+        margin: 0;
+        padding-top: $px16;
+        @media screen and (min-width: $tablet) {
+            padding-top: 0;
+            padding-right: $px36;
+        }
+        @media screen and (min-width: $desktop) {
+            padding-right: $px48;
+        }
+    }
+    &--links {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      @media screen and (min-width: $tablet) {
+        justify-content: left;
+        text-align: center;
+        align-items: baseline;
+      }
+    }
+    &--link {
+        color: $alt-tertiary-color;
+        text-decoration: none;
+        cursor: pointer;
+        @media screen and (min-width: $tablet) {
+            align-items: baseline;
+            color: $secondary-color;
+        }
+    }
+    &--bio {
+        @include tablet-nav-link;
+        border-bottom: 0.25rem solid $secondary-color;
+        @media screen and (min-width: $tablet) {
+            // margin: 0 2rem;
+            padding: $px24 0;
+            width: auto;
+      }
+      @media screen and (min-width: $desktop) {
+            @include desktop-h-links-padding;
+      }
+    }
+    &--shows {
+        @include font-regular;
+        @include tablet-nav-link;
+        color: $alt-tertiary-color;
+         border-bottom: 0.25rem solid transparent;
+
+         &:hover {
+            @include font-demi;
+            transition: border-bottom 0.5s ease-in-out;
+            border-bottom: 0.25rem solid white;
+            color: $secondary-color;
+        }
+        @media screen and (min-width: $tablet) {
+            margin: 0 2rem;
+            padding: $px24 0;
+            width: 4rem;
+        }
+        @media screen and (min-width: $desktop) {
+            @include desktop-h-links-padding;
+        }
+    }
+    
+    &--active {
+      @include font-demi;
+      color: $secondary-color;
+    } 
+  }
+  @media screen and (min-width: $tablet) {
+    justify-content: flex-start;
+    padding: 0;
+
+  }
+  @media screen and (min-width: $desktop) {
+    padding-left: 8rem;
+
+  }
+}
+
+
+
+// FOOTER
+.footer {
+    background-color: #323232;
+    color: white;
+    padding: 0 1rem;
+
+    &__title {
+        margin: 0;
+        padding: $px24 0 $px16;
+        @media screen and (min-width: $tablet) {
+            padding: 0;
+        }
+    }
+    .title--h5 {
+      @include font-regular;
+      padding: 1.75rem 0 1rem;
+      margin: 0;
+      @media screen and (min-width: $tablet) {
+        padding: 0;
+      }
+    }
+    &__socials {
+      padding-bottom: 1rem;
+      &--icon {
+        padding: 0 1.5rem 0 0;
+      }
+      @media screen and (min-width: $tablet) {
+        display: flex;
+        padding: 1rem 2rem;
+      }
+      @media screen and (min-width: $desktop) {
+        padding: 1rem 4rem;
+      }
+    }
+    .contact__company {
+      padding-bottom: 1rem;
+    }
+    .contact__link {
+      text-decoration: none;
+      color: white;
+      cursor: pointer;
+    }
+    &__contact {
+        width: 13rem;
+    }
+    &__h5 {
+      font-size: $px24;
+      padding: 2rem 0 0.75rem 0;
+      text-transform: uppercase;
+      
+      @media screen and (min-width: $tablet) {
+        position: absolute;
+        top: 0.25rem;
+        right: 0rem;
+        padding: 0;
+      }
+    }
+    &__copyright {
+      font-size: $px10;
+      line-height: 1.25rem;
+      @media screen and (min-width: $tablet) {
+        font-size: $px13;
+        line-height: 1.25rem;
+        padding: 1.5rem 0 0;
+      }
+    }
+    &__container {
+      @media screen and (min-width: $tablet) {
+        position: relative;
+      }
+      &--header {
+        @media screen and (min-width: $tablet) {
+          display: flex;
+          padding-bottom: 1.5rem;
+        }
+      }
+      &--contacts {
+        @media screen and (min-width: $tablet) {
+          display: flex;
+          gap: 2rem;
+        }
+        @media screen and (min-width: $desktop) {
+          gap: 4rem;
+        }
+      }
+    }
+    @media screen and (min-width: $tablet) {
+      padding: $px36 4.6875vw;
+    }
+    @media screen and (min-width: $desktop) {
+      padding: 3rem 10vw;
+    }
+  }
+  
