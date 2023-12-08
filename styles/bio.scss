@@ -2,8 +2,6 @@
 @use "partials/variables" as *;
 @use "partials/mixins" as *;
 
-/* 4.6875vw = NOT A RANDOM NUMBER responsive size for content to be correct width & have 36px padding when at 768px */
-/* 81.25vw = NOT A RANDOM NUMBER responsive size for content to be correct width & have 36px padding when at 1280px */
 
 @font-face {
   font-family: "AvenirNextLTPro-Regular";
@@ -37,6 +35,22 @@ body {
   margin: 0;
   color: $primary-color;
 }
+h2 {
+  @include font-demi;
+}
+
+p {
+  font-size: $px13;
+  line-height: $px20;
+  margin: 0;
+  padding-bottom: $px16;
+}
+h4 {
+  @include font-demi;
+  font-size: $px14;
+  margin: 0;
+  line-height: $px20;
+}
 @media screen and (min-width: $tablet) {
   h2 {
     font-size: $px36;
@@ -45,18 +59,6 @@ body {
   p {
     font-size: $px14;
   }
-}
-p {
-  font-size: $px13;
-  line-height: 1.25rem;
-  margin: 0;
-  padding-bottom: 1rem;
-}
-h4 {
-  @include font-demi;
-  font-size: $px14;
-  margin: 0;
-  line-height: 1.25rem;
 }
 
 // HERO SECTION
@@ -85,18 +87,18 @@ h4 {
     }
     @media screen and (min-width: $desktop) {
       height: 70vh;
-      padding-left: 8rem;
+      padding-left: $px128;
     }
   }
 
   &__h1 {
     font-size: $px24;
-    line-height: 2rem;
+    line-height: $px32;
     margin: 0;
     color: $secondary-color;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-    padding-left: 1rem;
+    padding-top: $px96;
+    padding-bottom: $px96;
+    padding-left: $px16;
     position: relative;
     z-index: 2;
     @media screen and (min-width: $tablet) {
@@ -113,14 +115,14 @@ h4 {
 // ABOUT SECTION
 .about {
   margin: 0;
-  padding: 0 1rem;
-
+  padding: 0 $px16;
+  
   &__title {
     margin: 0;
-    padding: 1.5rem 0 1rem;
+    padding: $px24 0 $px16;
     @media screen and (min-width: $tablet) {
       line-height: 2.75rem;
-      padding: 3rem 0 2.25rem;
+      padding: $px48 0 $px36;
     }
   }
     &__blurb {
@@ -128,12 +130,12 @@ h4 {
         margin: 0;
         padding-bottom: 0;
         @media screen and (min-width: $tablet) {
-            padding: 0 4.6875vw 0.75rem;
+            padding: 0 4.6875vw $px12;
             font-size: 1.35rem;
-            line-height: 2rem;
+            line-height: $px32;
             &--attrib {
                 font-size: $px16;
-                padding-bottom: 2.25rem;
+                padding-bottom: $px36;
             }
         }
         @media screen and (min-width: $desktop) {
@@ -144,25 +146,25 @@ h4 {
         }
     }
     &__image {
-        width: 90vw;
-        padding: 0 0 1rem;
+        width: 100%;
+        padding: 0 0 $px16;
         @media screen and (min-width: $tablet) {
-            margin-bottom: 2.25rem;
+            margin-bottom: $px36;
             padding: 0 4.6875vw;
         }
         @media screen and (min-width: $desktop) {
             width: 81.25vw;
-            padding: 0 6rem;
+            padding: 0 $px96;
         }
     }
     &__h3 {
       @include font-demi;
       font-size: $px14;
       margin: 0;
-      padding: 1.5rem 0 1rem;
+      padding: $px24 0 $px16;
       @media screen and (min-width: $tablet) {
         @include font-demi;
-        padding: 1.5rem 4.6875vw 0;
+        padding: $px24 4.6875vw 0;
         font-size: $px24;
       }
       @media screen and (min-width: $desktop) {
@@ -172,14 +174,14 @@ h4 {
     &__text {
         @media screen and (min-width: $tablet) {
             display: flex;
-            gap: 2rem;
-            padding: 1.5rem 4.6875vw 0; 
+            gap: $px32;
+            padding: $px24 4.6875vw 0; 
         }
         @media screen and (min-width: $desktop) {
-            padding: 2rem 0 0;
+            padding: $px32 0 0;
             &--container {
                 width: 81.25vw;
-                padding: 2rem 6rem 1rem;
+                padding: $px32 $px96 $px16;
             }
         }
     }
@@ -187,18 +189,18 @@ h4 {
         padding: 0 4.6875vw;
     }
     @media screen and (min-width: $desktop) {
-      padding: 0 8rem;
+      padding: 0 $px128;
     }
 }
 
 // PHOTO GALLERY
 .gallery {
   background-color: $alt-tertiary-color;
-
+  padding: $px24 $px16 $px16;
   &__container {
     display: flex;
     flex-direction: column;
-    row-gap: 1rem;
+    row-gap: $px16;
     margin: 0;
     @media screen and (min-width: $tablet) {
       flex-direction: row;
@@ -206,8 +208,8 @@ h4 {
       flex-wrap: wrap;
       justify-content: space-between;
       width: 90.625vw;
-      margin: 0 auto 2rem;
-      gap: 1.5rem;
+      margin: 0 auto $px32;
+      gap: $px24;
       padding: 0;
     }
     @media screen and (min-width: $desktop) {
@@ -216,7 +218,7 @@ h4 {
   }
   &__title {
     margin: 0;
-    padding: 1.5rem 1rem 1rem;
+    padding: 0 0 $px16;
     @media screen and (min-width: $tablet) {
         padding: $px48 0 $px36;
         margin: 0;
@@ -228,10 +230,10 @@ h4 {
   &__image {
     width: 90vw;
     @media screen and (min-width: $tablet) {
-      width: calc((90.625vw - 48px) / 3);
+      width: calc((90.625vw - $px48) / 3);
     }
     @media screen and (min-width: $desktop) {
-      width: calc((81.25vw - 48px) / 3);
+      width: calc((81.25vw - $px48) / 3);
     }
   }
   @media screen and (min-width: $tablet) {
@@ -239,8 +241,30 @@ h4 {
   }
 
   @media screen and (min-width: $desktop) {
-    padding: 0 8rem;
+    padding: 0 $px128;
     margin: 0;
   }
 }
+// COMMENTS SECTION
 
+// .comments {
+//   margin: 0;
+//   padding: $px24 $px16 $px16;
+
+// }
+// .comments__form {
+
+// }
+// form {
+
+// }
+// .comments__new-comment {
+//   width: 100%;
+
+// }
+
+// .comments__user--pic {
+//   width: 48px;
+//   height: 48px;
+//   border-radius: 50px;
+// }

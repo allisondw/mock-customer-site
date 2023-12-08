@@ -1,0 +1,33 @@
+@use "./partials/global" as *;
+@use "./partials/mixins" as *;
+@use "./partials/variables" as *;
+
+// HERO SECTION
+
+.hero {
+    padding-top: 4.375rem;
+    background-image: url(../assets/Images/hero-shows.jpg);
+    background-size: cover;
+    height: 40vh;
+    display: flex;
+    
+
+    &__player {
+
+    }
+}
+
+
+.tickets {
+    display: flex;
+    flex-direction: column;
+    &__1 {
+        display: flex;
+
+    }
+        
+    &__info {
+        display: flex;
+        flex-direction: column;
+    }
+}

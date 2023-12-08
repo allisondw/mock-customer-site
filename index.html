@@ -11,9 +11,9 @@
 <body>
     <header class="header">
         <nav class="header__nav">
-            <h5 class="title--h5"><a href="./index.html" class="header__nav--link">Bandsite</a></h5>
+            <a href="./index.html"><img src="./assets/Logo/Logo-bandsite.svg" class="logo header__nav--logo" alt="bandsite logo"></a> 
             <ul class="header__nav--links">
-                <li class="header__nav--bio "> <span class="header__nav--active">
+                <li class="header__nav-bio "> <span class="header__nav--active">
                     <a href="./index.html" class="header__nav--link">Biography</a></span></li>
                 <li class="header__nav--shows"><a href="#" class="header__nav--link">Shows</a></li>
             </ul>
@@ -56,6 +56,25 @@
                 <img src="./assets/Images/Photo-gallery-9.jpg" alt="rock show" class="gallery__image">
             </div>
         </section>
+
+        <!-- COMMENTS SECTON -->
+        <section class="comments-section">
+            <article class="comments-section__new-comment">
+                <h2 class="comments-section__title">Join the Conversation</h2>
+                <article class="comments-section__new-comment--submit">
+                    <!-- <img src="./assets/Images/Mohan-muruge.jpg" alt="user Mohan muruge" class="comments-section__user--pic"> -->
+                    <form id="comments-section__form">
+                        <label for="name">NAME</label>
+                        <input type="text" id="name-field" name="name-field" placeholder="Enter your name">
+                        
+                        <label for="comment">COMMENT</label>
+                        <textarea id="comment-field" name="comment-field" placeholder="Add a new comment" rows="4" cols="50"></textarea>
+                        
+                        <button type="submit" value="COMMENT" class="button">comment</button>
+                    </form>
+                </article>
+            </article>
+        </section>
     </main>
 
     <footer class="footer">
@@ -72,25 +91,26 @@
                 <article class="footer__contact">
                     <h4 class="contact__name">Cam Adams</h4>
                     <h4 class="contact__company">The Bees Knees Management</h4>
-                    <p class="contact__location">503 Broadway Penthouse, <br>New York, NY 10012, USA</p>
+                    <p class="contact__location">503 Broadway Penthouse, New York, NY 10012, USA</p>
                     <a href="mailto:info@thebeesknees.com" class="contact__link"><p class="contact__email">info@thebeesknees.com</p></a>
                 </article>
                 <article class="footer__contact">
                     <h4 class="contact__name">Pearl Gregg</h4>
                     <h4 class="contact__company">Limitless Artits Group</h4>
-                    <p class="contact__location">Booking Agent for <br>US / South America / Japan</p>
+                    <p class="contact__location">Booking Agent for US / South America / Japan</p>
                     <a href="mailto:pearl.gregg@limitlessag.com" class="contact__link"><p class="contact__email">pearl.gregg@limitlessag.com</p></a>
                 </article>
                 <article class="footer__contact">
                     <h4 class="contact__name">Carson Whyte</h4>
                     <h4 class="contact__company">ARCH Entertainment</h4>
-                    <p class="contact__location">Booking Agent for <br>Uk / EU / AU</p>
+                    <p class="contact__location">Booking Agent for Uk / EU / AU</p>
                     <a href="mailto:cwhyte@archentertainment.com" class="contact__link"><p class="contact__email">cwhyte@archentertainment.com</p></a>
                 </article>
             </div>
-            <h5 class="title--h5 footer__h5">Bandsite</h5>
+            <a href="./index.html"><img src="./assets/Logo/Logo-bandsite.svg" class="logo footer__logo" alt="bandsite logo"></a>
             <p class="footer__copyright">Copyright The Bees Knees © 2021 All Rights Reserved</p>
         </div>
     </footer>
+    <script src="./scripts/index-page.js"></script>
 </body>
 </html>

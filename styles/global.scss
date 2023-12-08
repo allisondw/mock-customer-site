@@ -81,10 +81,7 @@ h4 {
     @media screen and (min-width: $desktop) {
         padding-left: 0;
     }
-    .title--h5 {
-        @include font-regular;
-        text-transform: uppercase;
-        font-size: $px24;
+    &--logo {
         margin: 0;
         padding-top: $px16;
         @media screen and (min-width: $tablet) {
@@ -107,7 +104,7 @@ h4 {
       }
     }
     &--link {
-        color: $alt-tertiary-color;
+        color: $alt-secondary-color;
         text-decoration: none;
         cursor: pointer;
         @media screen and (min-width: $tablet) {
@@ -115,7 +112,7 @@ h4 {
             color: $secondary-color;
         }
     }
-    &--bio {
+    &-bio {
         @include tablet-nav-link;
         border-bottom: 0.25rem solid $secondary-color;
         @media screen and (min-width: $tablet) {
@@ -180,11 +177,14 @@ h4 {
             padding: 0;
         }
     }
-    .title--h5 {
-      @include font-regular;
+    &__logo {
       padding: 1.75rem 0 1rem;
       margin: 0;
+      
       @media screen and (min-width: $tablet) {
+        position: absolute;
+        top: 0.25rem;
+        right: 0rem;
         padding: 0;
       }
     }
@@ -211,18 +211,6 @@ h4 {
     }
     &__contact {
         width: 13rem;
-    }
-    &__h5 {
-      font-size: $px24;
-      padding: 2rem 0 0.75rem 0;
-      text-transform: uppercase;
-      
-      @media screen and (min-width: $tablet) {
-        position: absolute;
-        top: 0.25rem;
-        right: 0rem;
-        padding: 0;
-      }
     }
     &__copyright {
       font-size: $px10;
