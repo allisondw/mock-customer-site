@@ -23,6 +23,7 @@
   height: 40vh;
   display: flex;
 }
+
 .tickets {
   display: flex;
   flex-direction: column;

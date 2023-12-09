@@ -13,6 +13,7 @@ const comments = [
 function displayComment(comment) {
     const commentSection = document.querySelector("section.comments-section");
     const commentDiv = document.createElement("div");
+    commentDiv.classList.add("comments-section__post");
 
     const nameParagraph = document.createElement("p");
     nameParagraph.textContent = comment.name;

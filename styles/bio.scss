@@ -1,6 +1,6 @@
-@use "partials/global" as *;
-@use "partials/variables" as *;
-@use "partials/mixins" as *;
+@use "./partials/global" as *;
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
 
 
 @font-face {
@@ -186,7 +186,7 @@ h4 {
         }
     }
     @media screen and (min-width: $tablet) {
-        padding: 0 4.6875vw;
+        padding: 0 $px36;
     }
     @media screen and (min-width: $desktop) {
       padding: 0 $px128;
@@ -237,7 +237,7 @@ h4 {
     }
   }
   @media screen and (min-width: $tablet) {
-    margin: 0 4.6875vw $px16;
+    padding: 0 $px36 $px16;
   }
 
   @media screen and (min-width: $desktop) {
@@ -247,14 +247,55 @@ h4 {
 }
 // COMMENTS SECTION
 
-// .comments {
-//   margin: 0;
-//   padding: $px24 $px16 $px16;
+.comments-section {
+  margin: 0;
+  padding: $px24 $px16 $px16;
+  @media screen and (min-width: $tablet) {
+    padding: 0 $px36;
+  }
+}
+.comments-section__form {
+  display: flex;
+  flex-direction: column;
+}
+.name-field {
+  @include form-field;
+}
+.comment-field {
+  resize: none;
+  height: $px128;
+  transition: height 0.3s ease;
+  @include form-field;
+  @media screen and (min-width: $tablet) {
+    height: $px72;
+  }
+}
+.button {
+  height: $px40;
+  width: 100%;
+  margin-top: $px24;
+  color: $secondary-color;
+  background-color: $primary-color;
+  border-radius: $px4;
+  text-transform: uppercase;
+  font-size: $px10;
+  &:hover {
+    background-color: $hover-color;
+  }
+  @media screen and (min-width: $tablet) {
+    min-width: 9.375rem;
+    max-width: 10rem;
+    padding: $px10 $px32;
+    font-size: $px12;
+  }
+}
 
-// }
-// .comments__form {
-
-// }
+.form__label {
+  @include form-label-sm;
+  @media screen and (min-width: $tablet) {
+    @include form-label-lg;
+  }
+}
 // form {
 
 // }

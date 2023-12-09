@@ -1,3 +1,4 @@
+@use "./global" as *;
 @use "./variables" as *;
 
 
@@ -17,4 +18,40 @@
     text-align: center;
     width: 50vw;
     color: $alt-tertiary-color;
+}
+
+@mixin form-label-sm {
+    text-transform: uppercase;
+    color: $tertiary-color;
+    font-size: $px10;
+    padding-bottom: .25rem;
+}
+
+@mixin form-label-lg {
+    text-transform: uppercase;
+    color: $tertiary-color;
+    font-size: $px12;
+    padding-bottom: $px4;
+}
+
+@mixin form-field {
+    width: 100%;
+    min-height: $px36;
+    border: 1px solid $alt-secondary-color;
+    border-radius: $px4;
+}
+
+@mixin mobile-padding-x {
+    padding-right: $px16;
+    padding-left: $px16;
+}
+
+@mixin tablet-section-padding-x {
+    padding-right: $px32;
+    padding-left: $px32;
+}
+
+@mixin desktop-padding-x {
+    padding-right: $px128;
+    padding-left: $px128;
 }

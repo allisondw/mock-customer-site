@@ -15,7 +15,7 @@
             <ul class="header__nav--links">
                 <li class="header__nav-bio "> <span class="header__nav--active">
                     <a href="./index.html" class="header__nav--link">Biography</a></span></li>
-                <li class="header__nav--shows"><a href="#" class="header__nav--link">Shows</a></li>
+                <li class="header__nav--shows"><a href="./pages/shows.html" class="header__nav--link">Shows</a></li>
             </ul>
         </nav>
     </header>
@@ -61,18 +61,32 @@
         <section class="comments-section">
             <article class="comments-section__new-comment">
                 <h2 class="comments-section__title">Join the Conversation</h2>
-                <article class="comments-section__new-comment--submit">
+                <div class="comments-section__new-comment">
                     <!-- <img src="./assets/Images/Mohan-muruge.jpg" alt="user Mohan muruge" class="comments-section__user--pic"> -->
-                    <form id="comments-section__form">
-                        <label for="name">NAME</label>
-                        <input type="text" id="name-field" name="name-field" placeholder="Enter your name">
-                        
-                        <label for="comment">COMMENT</label>
-                        <textarea id="comment-field" name="comment-field" placeholder="Add a new comment" rows="4" cols="50"></textarea>
+                    <form id="comments-section__form" class="comments-section__form">
+
+                        <label for="name" class="form__label">NAME</label>
+
+                        <input 
+                        type="text" 
+                        id="name-field" 
+                        name="name-field" 
+                        placeholder="Enter your name"
+                        class="name-field"
+                        />
+
+                        <label for="comment" class="form__label">COMMENT</label>
+
+                        <textarea 
+                        id="comment-field" 
+                        name="comment-field" 
+                        placeholder="Add a new comment"
+                        class="comment-field">
+                        </textarea>
                         
                         <button type="submit" value="COMMENT" class="button">comment</button>
                     </form>
-                </article>
+                </div>
             </article>
         </section>
     </main>

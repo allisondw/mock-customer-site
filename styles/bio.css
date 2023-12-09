@@ -241,7 +241,7 @@ h4 {
 }
 @media screen and (min-width: 768px) {
   .about {
-    padding: 0 4.6875vw;
+    padding: 0 2.25rem;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -307,12 +307,86 @@ h4 {
 }
 @media screen and (min-width: 768px) {
   .gallery {
-    margin: 0 4.6875vw 1rem;
+    padding: 0 2.25rem 1rem;
   }
 }
 @media screen and (min-width: 1280px) {
   .gallery {
     padding: 0 8rem;
     margin: 0;
+  }
+}
+
+.comments-section {
+  margin: 0;
+  padding: 1.5rem 1rem 1rem;
+}
+@media screen and (min-width: 768px) {
+  .comments-section {
+    padding: 0 2.25rem;
+  }
+}
+
+.comments-section__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.name-field {
+  width: 100%;
+  min-height: 2.25rem;
+  border: 1px solid #E1E1E1;
+  border-radius: 0.25rem;
+}
+
+.comment-field {
+  resize: none;
+  height: 8rem;
+  transition: height 0.3s ease;
+  width: 100%;
+  min-height: 2.25rem;
+  border: 1px solid #E1E1E1;
+  border-radius: 0.25rem;
+}
+@media screen and (min-width: 768px) {
+  .comment-field {
+    height: 4.5rem;
+  }
+}
+
+.button {
+  height: 2.5rem;
+  width: 100%;
+  margin-top: 1.5rem;
+  color: #FFFFFF;
+  background-color: #323232;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+  font-size: 0.625rem;
+}
+.button:hover {
+  background-color: #000000;
+}
+@media screen and (min-width: 768px) {
+  .button {
+    min-width: 9.375rem;
+    max-width: 10rem;
+    padding: 0.625rem 2rem;
+    font-size: 0.75rem;
+  }
+}
+
+.form__label {
+  text-transform: uppercase;
+  color: #AFAFAF;
+  font-size: 0.625rem;
+  padding-bottom: 0.25rem;
+}
+@media screen and (min-width: 768px) {
+  .form__label {
+    text-transform: uppercase;
+    color: #AFAFAF;
+    font-size: 0.75rem;
+    padding-bottom: 0.25rem;
   }
 }/*# sourceMappingURL=bio.css.map */
