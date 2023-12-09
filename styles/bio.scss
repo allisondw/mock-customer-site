@@ -229,16 +229,16 @@ h4 {
     margin: 0;
   }
 }
-// COMMENTS SECTION
+// submit SECTION
 
-.comments-section {
+.submit-section {
   margin: 0;
   padding: $px24 $px16 $px16;
   @media screen and (min-width: $tablet) {
     padding: 0 $px36;
   }
 }
-.comments-section__form {
+.submit-section__form {
   display: flex;
   flex-direction: column;
 }

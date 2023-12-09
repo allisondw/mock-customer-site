@@ -1,20 +1,20 @@
 @font-face {
   font-family: "AvenirNextLTPro-Regular";
-  src: url("AvenirNextLTPro-Regular.woff2") format("woff2"), url("AvenirNextLTPro-Regular.woff") format("woff");
+  src: url("/assets/Font/avenir-woffs/AvenirNextLTPro-Regular.woff2") format("woff2"), url("/assets/Font/avenir-woffs/AvenirNextLTPro-Regular.woff") format("woff"), url("/assets/Font/AvenirNextLTPro-Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "AvenirNextLTPro-Bold";
-  src: url("AvenirNextLTPro-Bold.woff2") format("woff2"), url("AvenirNextLTPro-Bold.woff") format("woff");
+  src: url("/assets/Font/avenir-woffs/AvenirNextLTPro-Bold.woff2") format("woff2"), url("/assets/Font/avenir-woffs/AvenirNextLTPro-Bold.woff") format("woff"), url("/assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "AvenirNextLTPro-Demi";
-  src: url("AvenirNextLTPro-Demi.woff2") format("woff2"), url("AvenirNextLTPro-Demi.woff") format("woff");
+  src: url("/assets/Font/avenir-woffs/AvenirNextLTPro-Demi.woff2") format("woff2"), url("/assets/Font/avenir-woffs/AvenirNextLTPro-Demi.woff") format("woff"), url("/assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -302,17 +302,17 @@ h4 {
   }
 }
 
-.comments-section {
+.submit-section {
   margin: 0;
   padding: 1.5rem 1rem 1rem;
 }
 @media screen and (min-width: 768px) {
-  .comments-section {
+  .submit-section {
     padding: 0 2.25rem;
   }
 }
 
-.comments-section__form {
+.submit-section__form {
   display: flex;
   flex-direction: column;
 }
