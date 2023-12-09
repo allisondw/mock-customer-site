@@ -4,23 +4,27 @@
 
 @font-face {
   font-family: "AvenirNextLTPro-Regular";
-  src: url("../assets/Font/AvenirNextLTPro-Regular.otf") format("opentype"); 
-  font-weight: 200;
+  src: url("AvenirNextLTPro-Regular.woff2") format("woff2"), url("AvenirNextLTPro-Regular.woff") format("woff"),
+       url("../assets/Font/AvenirNextLTPro-Regular.otf") format("opentype");
+  font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
-
+@font-face {
+  font-family: "AvenirNextLTPro-Bold";
+  src: url("AvenirNextLTPro-Bold.woff2") format("woff2"), url("AvenirNextLTPro-Bold.woff") format("woff"),
+       url("../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 @font-face {
   font-family: "AvenirNextLTPro-Demi";
-  src: url("../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
-  font-weight: 400;
+  src: url("AvenirNextLTPro-Demi.woff2") format("woff2"), url("AvenirNextLTPro-Demi.woff") format("woff"),
+       url("../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
+  font-weight: normal;
   font-style: normal;
-}
-
-@font-face {
-  font-family: "AvenirNextLTPro-Regular";
-  src: url("../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
-  font-weight: 600;
-  font-style: bold;
+  font-display: swap;
 }
 
 *,
@@ -32,6 +36,7 @@
 body {
   @include font-regular;
   margin: 0;
+  
 }
 @media screen and (min-width: $tablet) {
   h2 {
@@ -55,10 +60,11 @@ h4 {
   margin: 0;
   line-height: 1.25rem;
 }
+
 .header {
   display: flex;
   justify-content: center;
-  color: $secondary-color;
+  color: $alt-secondary-color;
   background-color: $primary-color;
   margin: 0;
   padding: 0 $px36;
@@ -109,11 +115,10 @@ h4 {
         cursor: pointer;
         @media screen and (min-width: $tablet) {
             align-items: baseline;
-            color: $secondary-color;
         }
     }
     &-bio {
-        @include tablet-nav-link;
+        @include nav-link;
         border-bottom: 0.25rem solid $secondary-color;
         @media screen and (min-width: $tablet) {
             // margin: 0 2rem;
@@ -124,10 +129,9 @@ h4 {
             @include desktop-h-links-padding;
       }
     }
-    &--shows {
+    &-item {
         @include font-regular;
-        @include tablet-nav-link;
-        color: $alt-tertiary-color;
+        @include nav-link;
          border-bottom: 0.25rem solid transparent;
 
          &:hover {
@@ -145,10 +149,10 @@ h4 {
             @include desktop-h-links-padding;
         }
     }
-    
     &--active {
       @include font-demi;
       color: $secondary-color;
+      border-bottom: 0.25rem solid $secondary-color;
     } 
   }
   @media screen and (min-width: $tablet) {
@@ -163,50 +167,50 @@ h4 {
 }
 
 
-
 // FOOTER
 .footer {
-    background-color: #323232;
-    color: white;
-    padding: 0 1rem;
+    background-color: $primary-color;
+    color: $secondary-color;
+    @include mobile-padding-x;
 
     &__title {
         margin: 0;
-        padding: $px24 0 $px16;
+        @include mobile-padding-y;
         @media screen and (min-width: $tablet) {
             padding: 0;
         }
     }
     &__logo {
-      padding: 1.75rem 0 1rem;
+      padding: 1.75rem 0 $px16;
       margin: 0;
       
       @media screen and (min-width: $tablet) {
         position: absolute;
-        top: 0.25rem;
-        right: 0rem;
+        top: $px4;
+        right: 0;
         padding: 0;
       }
     }
     &__socials {
-      padding-bottom: 1rem;
+      padding-bottom: $px16;
       &--icon {
-        padding: 0 1.5rem 0 0;
+        padding: 0 $px32 0 0;
       }
       @media screen and (min-width: $tablet) {
         display: flex;
-        padding: 1rem 2rem;
+        @include tablet-padding-x;
+        padding-top: $px16;
       }
       @media screen and (min-width: $desktop) {
-        padding: 1rem 4rem;
+        padding: $px16 $px64;
       }
     }
     .contact__company {
-      padding-bottom: 1rem;
+      padding-bottom: $px16;
     }
     .contact__link {
       text-decoration: none;
-      color: white;
+      color: $secondary-color;
       cursor: pointer;
     }
     &__contact {
@@ -214,11 +218,11 @@ h4 {
     }
     &__copyright {
       font-size: $px10;
-      line-height: 1.25rem;
+      line-height: $px20;
       @media screen and (min-width: $tablet) {
         font-size: $px13;
-        line-height: 1.25rem;
-        padding: 1.5rem 0 0;
+        line-height: $px20;
+        padding: $px24 0 0;
       }
     }
     &__container {
@@ -228,24 +232,26 @@ h4 {
       &--header {
         @media screen and (min-width: $tablet) {
           display: flex;
-          padding-bottom: 1.5rem;
+          padding-bottom: $px24;
         }
       }
       &--contacts {
         @media screen and (min-width: $tablet) {
           display: flex;
-          gap: 2rem;
+          gap: $px32;
         }
         @media screen and (min-width: $desktop) {
-          gap: 4rem;
+          gap: $px64;
         }
       }
     }
     @media screen and (min-width: $tablet) {
-      padding: $px36 4.6875vw;
+      @include tablet-padding-y;
+      @include tablet-padding-x;
     }
     @media screen and (min-width: $desktop) {
-      padding: 3rem 10vw;
+      @include desktop-padding-y;
+      @include desktop-padding-x;
     }
   }
   

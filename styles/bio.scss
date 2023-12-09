@@ -3,27 +3,6 @@
 @use "./partials/mixins" as *;
 
 
-@font-face {
-  font-family: "AvenirNextLTPro-Regular";
-  src: url("../assets/Font/AvenirNextLTPro-Regular.otf") format("opentype"); 
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "AvenirNextLTPro-Demi";
-  src: url("../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "AvenirNextLTPro-Regular";
-  src: url("../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
-  font-weight: 600;
-  font-style: bold;
-}
-
 *,
 *::before,
 *::after {
@@ -64,7 +43,7 @@ h4 {
 // HERO SECTION
 .hero {
   &__bg-img {
-    padding-top: 5rem;
+    padding-top: $px96;
     position: relative;
     background-image: url(../assets/Images/hero-bio.jpg);
     background-size: cover;
@@ -77,7 +56,7 @@ h4 {
       right: 0;
       bottom: 0;
       left: 0;
-      background: rgba(0, 0, 0, 0.5);
+      background: $hero-bg-color;
       z-index: 1;
     }
     @media screen and (min-width: $tablet) {
@@ -87,25 +66,26 @@ h4 {
     }
     @media screen and (min-width: $desktop) {
       height: 70vh;
-      padding-left: $px128;
+      @include desktop-padding-x;
     }
   }
 
   &__h1 {
+    @include font-demi;
     font-size: $px24;
     line-height: $px32;
     margin: 0;
     color: $secondary-color;
     padding-top: $px96;
     padding-bottom: $px96;
-    padding-left: $px16;
+    @include mobile-padding-x;
     position: relative;
     z-index: 2;
     @media screen and (min-width: $tablet) {
-      @include font-demi;
+      
       font-size: $px60;
-      line-height: 4.25rem;
-      padding: 0 4.6875vw;
+      line-height: $px68;
+      @include tablet-padding-x;
     }
     @media screen and (min-width: $desktop) {
       padding: 0;
@@ -114,15 +94,19 @@ h4 {
 }
 // ABOUT SECTION
 .about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0;
-  padding: 0 $px16;
+  @include mobile-padding-x;
+  background-color: $secondary-color;
   
   &__title {
     margin: 0;
-    padding: $px24 0 $px16;
+    @include mobile-padding-y;
     @media screen and (min-width: $tablet) {
-      line-height: 2.75rem;
-      padding: $px48 0 $px36;
+      line-height: $px44;
+      @include tablet-padding-y;
     }
   }
     &__blurb {
@@ -130,7 +114,7 @@ h4 {
         margin: 0;
         padding-bottom: 0;
         @media screen and (min-width: $tablet) {
-            padding: 0 4.6875vw $px12;
+            @include tablet-padding-x;
             font-size: 1.35rem;
             line-height: $px32;
             &--attrib {
@@ -139,9 +123,9 @@ h4 {
             }
         }
         @media screen and (min-width: $desktop) {
-            @include desktop-blurb;
+            @include desktop-blurb-padding-x;
             &--attrib {
-                @include desktop-blurb;
+                // @include ;
             }
         }
     }
