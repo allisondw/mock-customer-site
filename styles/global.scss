@@ -117,33 +117,21 @@ h4 {
             align-items: baseline;
         }
     }
-    &-bio {
-        @include nav-link;
-        border-bottom: 0.25rem solid $secondary-color;
-        @media screen and (min-width: $tablet) {
-            // margin: 0 2rem;
-            padding: $px24 0;
-            width: auto;
-      }
-      @media screen and (min-width: $desktop) {
-            @include desktop-h-links-padding;
-      }
-    }
     &-item {
         @include font-regular;
         @include nav-link;
-         border-bottom: 0.25rem solid transparent;
+         border-bottom: $px4 solid transparent;
 
          &:hover {
             @include font-demi;
             transition: border-bottom 0.5s ease-in-out;
-            border-bottom: 0.25rem solid white;
+            border-bottom: $px4 solid $secondary-color;
             color: $secondary-color;
         }
         @media screen and (min-width: $tablet) {
             margin: 0 2rem;
             padding: $px24 0;
-            width: 4rem;
+            width: $px96;
         }
         @media screen and (min-width: $desktop) {
             @include desktop-h-links-padding;

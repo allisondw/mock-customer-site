@@ -1,10 +1,3 @@
-// const form = document.getElementById("#comments-form");
-// form.addEventListener('submit', function(e) {
-//     e.preventDefault();
-//     console.log(e.target.name-field.value);
-//     console.log(e.target.comment-field.value);
-// });
-
 const comments = [
     { name: "Connor Walton", timestamp: "02/17/2021", commentText: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains." },
     { name: "Emilie Beach", timestamp: "01/09/2021", commentText: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day." },
@@ -29,6 +22,22 @@ function displayComment(comment, commentCardEl) {
     commentCardEl.appendChild(commentEl); 
 };
 
+function renderComments() {
+    let commentSection = document.querySelector("section.comments-section");
+    commentSection.innerText = "";
+
+    comments.forEach((comment) => {
+        let commentCard = document.createElement("article");
+        commentCard.classList.add("comments-section__post");
+
+        
+        displayComment(comment, commentCard);
+        commentSection.appendChild(commentCard);
+    })
+
+    document.getElementById("name-field").value = "";
+    document.getElementById("comment-field").value = "";
+};
 
 document.getElementById("submit-section__form").addEventListener('submit', (event) => {
     event.preventDefault();
@@ -44,19 +53,3 @@ document.getElementById("submit-section__form").addEventListener('submit', (even
 
     renderComments();
 });
-
-function renderComments() {
-    let commentSection = document.querySelector("section.comments-section");
-    commentSection.innerText = "";
-
-    comments.forEach((comment) => {
-        let commentCard = document.createElement("article");
-        commentCard.classList.add("comments-section__post");
-        
-        displayComment(comment, commentCard);
-        commentSection.appendChild(commentCard);
-    })
-
-    document.getElementById("name-field").value = "";
-    document.getElementById("comment-field").value = "";
-}
