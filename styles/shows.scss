@@ -5,27 +5,74 @@
 // HERO SECTION
 
 .hero {
-    padding-top: 4.375rem;
+    @include mobile-padding-x;
+    padding-top: $px96;
+    display: flex;
+    flex-direction: column;
     background-image: url(../assets/Images/hero-shows.jpg);
     background-size: cover;
-    height: 40vh;
-    display: flex;
+    height: 25vh;
+    justify-content: center;
 
-
+    &__h1 {
+        @include font-demi;
+        font-size: $px24;
+        line-height: $px32;
+        margin: 0;
+        color: $secondary-color;
+        @include mobile-padding-x;
+        position: relative;
+        z-index: 2;
+        @media screen and (min-width: $tablet) {
+          
+          font-size: $px60;
+          line-height: $px68;
+          @include tablet-padding-x;
+        }
+        @media screen and (min-width: $desktop) {
+          padding: 0;
+        }
+      }
   
 }
 
 
-.tickets {
+.shows {
     display: flex;
     flex-direction: column;
-    &__1 {
-        display: flex;
-
+    @include mobile-padding-y;
+    &__title {
+        @include mobile-padding-x;
+        @include font-demi;
+        margin: 0;
     }
         
-    &__info {
-        display: flex;
-        flex-direction: column;
+    &__card {
+        border-bottom: 1px solid $alt-secondary-color;
+        @include mobile-padding-x;
+        @include mobile-padding-y;
+
+        &-label {
+            &--date, &--venue, &--location {
+                text-transform: uppercase;
+                color: $tertiary-color;
+                font-size: $px12;
+                padding-bottom: $px10;
+                margin: 0;
+            }
+        }
+        &-body {
+            &--date {
+                @include font-demi;
+            }
+        }
+        &__divider {
+            border-width: 1px;
+            width: 100vw;
+            border-color: $alt-secondary-color;
+        }
+    }
+    .button {
+        margin: 0;
     }
 }

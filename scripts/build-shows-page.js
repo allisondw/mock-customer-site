@@ -12,6 +12,10 @@ renderShows();
 
 function renderShows() {
     const showsSection = document.querySelector("section.shows");
+    let showsHeader = document.createElement("h2");
+    showsHeader.classList.add("shows__title")
+    showsHeader.innerText = "Shows";
+    showsSection.appendChild(showsHeader);
 
     showsArr.forEach((show) => {
         let showCard = document.createElement("article");
@@ -44,9 +48,6 @@ function renderShows() {
         let buyTickets = document.createElement("button");
         buyTickets.classList.add("button");
         buyTickets.innerText = "buy tickets";
-
-        let divider = document.createElement("hr");
-        divider.classList.add("shows__card--divider");
         
         showCard.appendChild(dateTitle);
         showCard.appendChild(dateBody);
@@ -55,20 +56,12 @@ function renderShows() {
         showCard.appendChild(locationTitle);
         showCard.appendChild(locationBody);
         showCard.appendChild(buyTickets);
-        showCard.appendChild(divider);
 
-        // displayShowCard(show, showCard);
-        
-        
         showsSection.appendChild(showCard);
     });
-    // showsArr.forEach((show) => {
+
 
     
 };
 
-
-function displayShowCard(show, showCardEl) {
-
-}
 

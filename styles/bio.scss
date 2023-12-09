@@ -242,6 +242,9 @@ h4 {
   display: flex;
   flex-direction: column;
 }
+.button {
+  margin-top: $px24;
+}
 .name-field {
   @include form-field;
 }
@@ -254,25 +257,7 @@ h4 {
     height: $px72;
   }
 }
-.button {
-  height: $px40;
-  width: 100%;
-  margin-top: $px24;
-  color: $secondary-color;
-  background-color: $primary-color;
-  border-radius: $px4;
-  text-transform: uppercase;
-  font-size: $px10;
-  &:hover {
-    background-color: $hover-color;
-  }
-  @media screen and (min-width: $tablet) {
-    min-width: 9.375rem;
-    max-width: 10rem;
-    padding: $px10 $px32;
-    font-size: $px12;
-  }
-}
+
 
 .form__label {
   @include form-label-sm;

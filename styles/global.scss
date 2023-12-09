@@ -60,6 +60,25 @@ h4 {
   margin: 0;
   line-height: 1.25rem;
 }
+.button {
+  height: $px40;
+  width: 100%;
+  margin-top: $px24;
+  color: $secondary-color;
+  background-color: $primary-color;
+  border-radius: $px4;
+  text-transform: uppercase;
+  font-size: $px10;
+  &:hover {
+    background-color: $hover-color;
+  }
+  @media screen and (min-width: $tablet) {
+    min-width: 9.375rem;
+    max-width: 10rem;
+    padding: $px10 $px32;
+    font-size: $px12;
+  }
+}
 
 .header {
   display: flex;

@@ -20,21 +20,81 @@
   font-display: swap;
 }
 .hero {
-  padding-top: 4.375rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  padding-top: 6rem;
+  display: flex;
+  flex-direction: column;
   background-image: url(../assets/Images/hero-shows.jpg);
   background-size: cover;
-  height: 40vh;
-  display: flex;
+  height: 25vh;
+  justify-content: center;
+}
+.hero__h1 {
+  font-family: "AvenirNextLTPro-Demi", Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin: 0;
+  color: #FFFFFF;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  position: relative;
+  z-index: 2;
+}
+@media screen and (min-width: 768px) {
+  .hero__h1 {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero__h1 {
+    padding: 0;
+  }
 }
 
-.tickets {
+.shows {
   display: flex;
   flex-direction: column;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
 }
-.tickets__1 {
-  display: flex;
+.shows__title {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  font-family: "AvenirNextLTPro-Demi", Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  margin: 0;
 }
-.tickets__info {
-  display: flex;
-  flex-direction: column;
+.shows__card {
+  border-bottom: 1px solid #E1E1E1;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+.shows__card-label--date, .shows__card-label--venue, .shows__card-label--location {
+  text-transform: uppercase;
+  color: #AFAFAF;
+  font-size: 0.75rem;
+  padding-bottom: 0.625rem;
+  margin: 0;
+}
+.shows__card-body--date {
+  font-family: "AvenirNextLTPro-Demi", Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+.shows__card__divider {
+  border-width: 1px;
+  width: 100vw;
+  border-color: #E1E1E1;
+}
+.shows .button {
+  margin: 0;
 }/*# sourceMappingURL=shows.css.map */
