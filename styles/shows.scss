@@ -4,36 +4,63 @@
 
 // HERO SECTION
 
-.hero {
-    @include mobile-padding-x;
-    padding-top: $px96;
-    display: flex;
-    flex-direction: column;
-    background-image: url(../assets/Images/hero-shows.jpg);
-    background-size: cover;
-    height: 25vh;
-    justify-content: center;
+.shows-hero {
+    
+    &__bg-img {
+        @include mobile-padding-x;
+        padding-top: $px96;
+        display: flex;
+        flex-direction: column;
+        background-image: url(../assets/Images/hero-shows.jpg);
+        background-size: cover;
+        // height: 25vh;
+        justify-content: center;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: $hero-bg-color;
+            z-index: 1;
+          }
+    }
+    &__heading {
+        width: 75%;
 
+    }
     &__h1 {
         @include font-demi;
         font-size: $px24;
         line-height: $px32;
         margin: 0;
         color: $secondary-color;
-        @include mobile-padding-x;
         position: relative;
         z-index: 2;
+        @include mobile-padding-y;
         @media screen and (min-width: $tablet) {
-          
-          font-size: $px60;
-          line-height: $px68;
-          @include tablet-padding-x;
+            font-size: $px60;
+            line-height: $px68;
+            @include tablet-padding-x;
         }
         @media screen and (min-width: $desktop) {
-          padding: 0;
+            padding: 0;
         }
-      }
-  
+    }
+    &__h3 {
+        @include font-regular;
+        color: $secondary-color;
+        margin: $px32 0 0;
+        z-index: 3;
+        position: relative;
+    }
+    &__player {
+        margin: 0 0 $px32;
+    }
+    
+   
 }
 
 
@@ -41,38 +68,97 @@
     display: flex;
     flex-direction: column;
     @include mobile-padding-y;
+   
     &__title {
-        @include mobile-padding-x;
         @include font-demi;
         margin: 0;
+        @include mobile-padding-x;
+        @media screen and (min-width: $tablet) {
+            padding: 0;
+        }
     }
-        
+    &__container {
+        // @include mobile-padding-x;
+        @media screen and (min-width: $tablet) {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-items: space-between;
+        }
+    }
     &__card {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: $px16;
         border-bottom: 1px solid $alt-secondary-color;
         @include mobile-padding-x;
         @include mobile-padding-y;
 
+        &--info-div {
+            display: flex;
+            flex-direction: column;
+            @media screen and (min-width: $tablet) {
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 0;
+            }
+        }
+        
         &-label {
             &--date, &--venue, &--location {
                 text-transform: uppercase;
                 color: $tertiary-color;
-                font-size: $px12;
-                padding-bottom: $px10;
+                font-size: $px10;
+                padding-bottom: $px8;
                 margin: 0;
+                @media screen and (min-width: $tablet) {
+                    display: none;
+                }
+            }
+        }
+        .label__first-row {
+            @media screen and (min-width: $tablet) {
+                display: block;
             }
         }
         &-body {
             &--date {
                 @include font-demi;
             }
+            &--date, &--venue, &--location {
+                padding-bottom: $px12;
+            }
         }
         &__divider {
             border-width: 1px;
-            width: 100vw;
             border-color: $alt-secondary-color;
         }
+        
+        &--inner-div {
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        @media screen and (min-width: $tablet) {
+            flex-direction: row;
+            padding: 0 0 $px16;
+            flex-grow: 2 1;
+        }
+        
     }
     .button {
-        margin: 0;
+        // margin: 0 $px16 $px16;
+
+    }
+    @media screen and (min-width: $tablet) {
+        flex-direction: column;
+        justify-content: space-between;
+        @include tablet-padding-x;
+    }
+
+    @media screen and (min-width: $desktop) {
+        flex-direction: row;
+        justify-content: space-between;
+        @include tablet-padding-x;
     }
 }

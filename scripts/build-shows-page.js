@@ -11,7 +11,9 @@ const showsArr = [
 renderShows();
 
 function renderShows() {
-    const showsSection = document.querySelector("section.shows");
+    let showsSection = document.querySelector("section.shows");
+    let showsDiv = document.createElement("div");
+    showsDiv.classList.add("shows__container");
     let showsHeader = document.createElement("h2");
     showsHeader.classList.add("shows__title")
     showsHeader.innerText = "Shows";
@@ -20,27 +22,29 @@ function renderShows() {
     showsArr.forEach((show) => {
         let showCard = document.createElement("article");
         showCard.classList.add("shows__card");
-
+        let showInfoDiv = document.createElement("div");
+        showInfoDiv.classList.add("shows__card--info-div")
+        
         let dateTitle = document.createElement("h5");
         dateTitle.classList.add("shows__card-label--date")
         dateTitle.innerText = "date";
-
+        
         let dateBody = document.createElement("p");
         dateBody.classList.add("shows__card-body--date");
         dateBody.innerText = show.date;
 
-        let venueTitle = document.createElement("h5")
+
+        let venueTitle = document.createElement("h5");
         venueTitle.classList.add("shows__card-label--venue");
         venueTitle.innerText = "venue";
-
         let venueBody = document.createElement("p");
         venueBody.classList.add("shows__card-body--venue");
         venueBody.innerText = show.venue;
 
+
         let locationTitle = document.createElement("h5")
         locationTitle.classList.add("shows__card-label--location");
         locationTitle.innerText = "location";
-
         let locationBody = document.createElement("p");
         locationBody.classList.add("shows__card-body--location");
         locationBody.innerText = show.location;
@@ -48,20 +52,43 @@ function renderShows() {
         let buyTickets = document.createElement("button");
         buyTickets.classList.add("button");
         buyTickets.innerText = "buy tickets";
+
+        let dateDiv = document.createElement("div");
+        dateDiv.classList.add("shows__card--inner-div");
+
+        let venueDiv = document.createElement("div");
+        venueDiv.classList.add("shows__card--inner-div");
+
+        let locationDiv = document.createElement("div");
+        locationDiv.classList.add("shows__card--inner-div");
+
+        if(show == showsArr[0]) {
+            dateTitle.classList.add("label__first-row");
+            venueTitle.classList.add("label__first-row");
+            locationTitle.classList.add("label__first-row");
+        };
         
-        showCard.appendChild(dateTitle);
-        showCard.appendChild(dateBody);
-        showCard.appendChild(venueTitle);
-        showCard.appendChild(venueBody);
-        showCard.appendChild(locationTitle);
-        showCard.appendChild(locationBody);
+        dateDiv.appendChild(dateTitle);
+        dateDiv.appendChild(dateBody);
+
+        venueDiv.appendChild(venueTitle);
+        venueDiv.appendChild(venueBody);
+
+        locationDiv.appendChild(locationTitle);
+        locationDiv.appendChild(locationBody);
+
+        showInfoDiv.appendChild(dateDiv);
+        showInfoDiv.appendChild(venueDiv);
+        showInfoDiv.appendChild(locationDiv);
+
+        showCard.appendChild(showInfoDiv);
         showCard.appendChild(buyTickets);
 
-        showsSection.appendChild(showCard);
+        showsDiv.appendChild(showCard);
+
+
+        showsSection.appendChild(showsDiv);
     });
-
-
-    
 };
 
 

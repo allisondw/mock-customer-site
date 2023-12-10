@@ -261,20 +261,11 @@ h4 {
 
 .form__label {
   @include form-label-sm;
+  font-family: 'AvenirNextLTPro-Regular', Arial, Helvetica, sans-serif;
+  color: $primary-color;
+  resize: none;
+  cursor: text;
   @media screen and (min-width: $tablet) {
     @include form-label-lg;
   }
 }
-// form {
-
-// }
-// .comments__new-comment {
-//   width: 100%;
-
-// }
-
-// .comments__user--pic {
-//   width: 48px;
-//   height: 48px;
-//   border-radius: 50px;
-// }

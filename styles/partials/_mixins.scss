@@ -77,3 +77,8 @@
     border-bottom: 0.25rem solid white;
     color: $secondary-color;
 }
+
+@mixin tablet-table-padding-x {
+    padding-right: $px18;
+    padding-left: $px18;
+}

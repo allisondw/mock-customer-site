@@ -61,9 +61,10 @@ h4 {
   line-height: 1.25rem;
 }
 .button {
+  @include font-regular;
+  letter-spacing: 0.1ch;
   height: $px40;
   width: 100%;
-  margin-top: $px24;
   color: $secondary-color;
   background-color: $primary-color;
   border-radius: $px4;
