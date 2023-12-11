@@ -91,4 +91,12 @@ function renderShows() {
     });
 };
 
+const cards = document.querySelectorAll('article.shows__card');
+
+cards.forEach(card => {
+    card.addEventListener('click', () => {
+        cards.forEach(card => card.classList.remove('shows__card--selected'));
+        card.classList.add('shows__card--selected');
+    });
+});
 

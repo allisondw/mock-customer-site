@@ -19,6 +19,19 @@
   font-style: normal;
   font-display: swap;
 }
+.shows-hero {
+  height: 25vh;
+}
+@media screen and (min-width: 768px) {
+  .shows-hero {
+    height: 50vh;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows-hero {
+    height: 75vh;
+  }
+}
 .shows-hero__bg-img {
   padding-right: 1rem;
   padding-left: 1rem;
@@ -27,6 +40,7 @@
   flex-direction: column;
   background-image: url(../assets/Images/hero-shows.jpg);
   background-size: cover;
+  height: 100%;
   justify-content: center;
   position: relative;
 }
@@ -40,8 +54,25 @@
   background: rgba(50, 50, 50, 0.5019607843);
   z-index: 1;
 }
+@media screen and (min-width: 768px) {
+  .shows-hero__bg-img {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows-hero__bg-img {
+    padding-right: 8rem;
+    padding-left: 8rem;
+  }
+}
 .shows-hero__heading {
   width: 75%;
+}
+@media screen and (min-width: 1280px) {
+  .shows-hero__heading {
+    width: 35%;
+  }
 }
 .shows-hero__h1 {
   font-family: "AvenirNextLTPro-Demi", Arial, sans-serif;
@@ -60,8 +91,6 @@
   .shows-hero__h1 {
     font-size: 3.75rem;
     line-height: 4.25rem;
-    padding-right: 2rem;
-    padding-left: 2rem;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -78,8 +107,14 @@
   z-index: 3;
   position: relative;
 }
+@media screen and (min-width: 768px) {
+  .shows-hero__h3 {
+    font-size: 1.5rem;
+  }
+}
 .shows-hero__player {
   margin: 0 0 2rem;
+  z-index: 4;
 }
 
 .shows {
@@ -110,6 +145,11 @@
     justify-items: space-between;
   }
 }
+@media screen and (min-width: 1280px) {
+  .shows__container {
+    width: 75%;
+  }
+}
 .shows__card {
   display: flex;
   flex-direction: column;
@@ -126,9 +166,15 @@
 }
 @media screen and (min-width: 768px) {
   .shows__card--info-div {
+    width: 100%;
     flex-direction: row;
     justify-content: space-between;
     padding: 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows__card--info-div {
+    align-items: self-end;
   }
 }
 .shows__card-label--date, .shows__card-label--venue, .shows__card-label--location {
@@ -146,6 +192,7 @@
 @media screen and (min-width: 768px) {
   .shows__card .label__first-row {
     display: block;
+    padding-bottom: 2rem;
   }
 }
 .shows__card-body--date {
@@ -154,7 +201,12 @@
   font-style: normal;
 }
 .shows__card-body--date, .shows__card-body--venue, .shows__card-body--location {
-  padding-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+@media screen and (min-width: 768px) {
+  .shows__card-body--date, .shows__card-body--venue, .shows__card-body--location {
+    padding-bottom: 0;
+  }
 }
 .shows__card__divider {
   border-width: 1px;
@@ -162,13 +214,34 @@
 }
 .shows__card--inner-div {
   flex-direction: column;
-  flex-grow: 1;
 }
 @media screen and (min-width: 768px) {
   .shows__card {
     flex-direction: row;
-    padding: 0 0 1rem;
-    flex-grow: 2 1;
+    align-items: self-end;
+    justify-content: space-between;
+    padding-top: 0.25rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows__card {
+    width: 60vw;
+  }
+}
+.shows__card--selected {
+  background-color: #E1E1E1;
+}
+.shows__card:hover {
+  background-color: #FAFAFA;
+}
+@media screen and (min-width: 768px) {
+  .shows__card .button {
+    margin: 0 0 0 3rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows__card .button {
+    margin: 1rem 0 0 3rem;
   }
 }
 @media screen and (min-width: 768px) {
@@ -182,8 +255,9 @@
 @media screen and (min-width: 1280px) {
   .shows {
     flex-direction: row;
-    justify-content: space-between;
-    padding-right: 2rem;
-    padding-left: 2rem;
+    padding-right: 8rem;
+    padding-left: 8rem;
+    padding-top: 3rem;
+    padding-bottom: 2.25rem;
   }
 }/*# sourceMappingURL=shows.css.map */

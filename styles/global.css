@@ -21,21 +21,21 @@
 }
 @font-face {
   font-family: "AvenirNextLTPro-Regular";
-  src: url("AvenirNextLTPro-Regular.woff2") format("woff2"), url("AvenirNextLTPro-Regular.woff") format("woff"), url("../assets/Font/AvenirNextLTPro-Regular.otf") format("opentype");
+  src: url("/assets/Font/AvenirNextLTPro-Regular.woff2") format("woff2"), url("/assets/Font/AvenirNextLTPro-Regular.woff") format("woff"), url("/assets/Font/AvenirNextLTPro-Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "AvenirNextLTPro-Bold";
-  src: url("AvenirNextLTPro-Bold.woff2") format("woff2"), url("AvenirNextLTPro-Bold.woff") format("woff"), url("../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
+  src: url("/assets/Font/AvenirNextLTPro-Bold.woff2") format("woff2"), url("/assets/Font/AvenirNextLTPro-Bold.woff") format("woff"), url("/assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "AvenirNextLTPro-Demi";
-  src: url("AvenirNextLTPro-Demi.woff2") format("woff2"), url("AvenirNextLTPro-Demi.woff") format("woff"), url("../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
+  src: url("/assets/Font/AvenirNextLTPro-Demi.woff2") format("woff2"), url("/assets/Font/AvenirNextLTPro-Demi.woff") format("woff"), url("/assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -82,17 +82,18 @@ h4 {
 }
 
 .button {
-  font-family: "AvenirNextLTPro-Regular", Arial, sans-serif;
-  font-weight: 200;
+  font-family: "AvenirNextLTPro-Demi", Arial, sans-serif;
+  font-weight: 600;
   font-style: normal;
-  letter-spacing: 0.1ch;
+  letter-spacing: 0.15ch;
   height: 2.5rem;
   width: 100%;
   color: #FFFFFF;
   background-color: #323232;
   border-radius: 0.25rem;
   text-transform: uppercase;
-  font-size: 0.625rem;
+  font-size: 0.75rem;
+  padding: 0 2rem;
 }
 .button:hover {
   background-color: #000000;
@@ -130,6 +131,7 @@ h4 {
   .header__nav {
     flex-direction: row;
     justify-content: left;
+    padding-left: 0;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -218,7 +220,8 @@ h4 {
 @media screen and (min-width: 768px) {
   .header {
     justify-content: flex-start;
-    padding: 0;
+    padding-right: 2rem;
+    padding-left: 2rem;
   }
 }
 @media screen and (min-width: 1280px) {

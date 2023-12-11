@@ -82,7 +82,6 @@ h4 {
     position: relative;
     z-index: 2;
     @media screen and (min-width: $tablet) {
-      
       font-size: $px60;
       line-height: $px68;
       @include tablet-padding-x;
@@ -115,7 +114,7 @@ h4 {
         padding-bottom: 0;
         @media screen and (min-width: $tablet) {
             @include tablet-padding-x;
-            font-size: 1.35rem;
+            font-size: 1.5rem;
             line-height: $px32;
             &--attrib {
                 font-size: $px16;
@@ -123,10 +122,7 @@ h4 {
             }
         }
         @media screen and (min-width: $desktop) {
-            @include desktop-blurb-padding-x;
-            &--attrib {
-                // @include ;
-            }
+            @include desktop-padding-x;
         }
     }
     &__image {
@@ -134,11 +130,11 @@ h4 {
         padding: 0 0 $px16;
         @media screen and (min-width: $tablet) {
             margin-bottom: $px36;
-            padding: 0 4.6875vw;
+            @include tablet-padding-x;
         }
         @media screen and (min-width: $desktop) {
-            width: 81.25vw;
-            padding: 0 $px96;
+            // width: 81.25vw;
+            @include desktop-padding-x;
         }
     }
     &__h3 {
@@ -148,32 +144,28 @@ h4 {
       padding: $px24 0 $px16;
       @media screen and (min-width: $tablet) {
         @include font-demi;
-        padding: $px24 4.6875vw 0;
+        @include tablet-padding-x;
         font-size: $px24;
       }
       @media screen and (min-width: $desktop) {
-        padding: 0;
+        @include desktop-padding-x;
       }
     }
     &__text {
         @media screen and (min-width: $tablet) {
             display: flex;
             gap: $px32;
-            padding: $px24 4.6875vw 0; 
+            @include tablet-padding-x;
         }
         @media screen and (min-width: $desktop) {
-            padding: $px32 0 0;
-            &--container {
-                width: 81.25vw;
-                padding: $px32 $px96 $px16;
-            }
+            @include desktop-padding-x;
         }
     }
     @media screen and (min-width: $tablet) {
-        padding: 0 $px36;
+        @include tablet-padding-x;
     }
     @media screen and (min-width: $desktop) {
-      padding: 0 $px128;
+      @include desktop-padding-x;
     }
 }
 
@@ -184,6 +176,7 @@ h4 {
   &__container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     row-gap: $px16;
     margin: 0;
     @media screen and (min-width: $tablet) {
@@ -191,8 +184,6 @@ h4 {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      width: 90.625vw;
-      margin: 0 auto $px32;
       gap: $px24;
       padding: 0;
     }
@@ -212,20 +203,21 @@ h4 {
     }
   }
   &__image {
-    width: 90vw;
+    width: 100%;
+    flex-grow: 1 2;
     @media screen and (min-width: $tablet) {
-      width: calc((90.625vw - $px48) / 3);
+      width: calc((100% - 48px) / 3);
     }
     @media screen and (min-width: $desktop) {
       width: calc((81.25vw - $px48) / 3);
     }
   }
   @media screen and (min-width: $tablet) {
-    padding: 0 $px36 $px16;
+    @include tablet-padding-x;
   }
 
   @media screen and (min-width: $desktop) {
-    padding: 0 $px128;
+    @include desktop-padding-x;
     margin: 0;
   }
 }
@@ -233,39 +225,157 @@ h4 {
 
 .submit-section {
   margin: 0;
-  padding: $px24 $px16 $px16;
+  @include mobile-padding-x;
+  @include mobile-padding-y;
   @media screen and (min-width: $tablet) {
-    padding: 0 $px36;
+    @include tablet-padding-x;
   }
-}
-.submit-section__form {
-  display: flex;
-  flex-direction: column;
+  @media screen and (min-width: $desktop) {
+    @include desktop-padding-x;
+  }
+  
+  &__title {
+    margin: 0;
+  }
+  &__user-pic {
+    height: $px36;
+    width: $px36;
+    border-radius: 50%;
+    margin: $px40 $px16 0 0;
+    @media screen and (min-width: $tablet){
+      height: $px48;
+      width: $px48;
+    }
+  }
+  &__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: $px16;
+    border-bottom: 1px solid $alt-secondary-color;
+    &-div {
+      display: flex;
+      width: 100%;
+      justify-content: stretch;
+      @media screen and (min-width: $tablet) {
+        @include tablet-padding-x;
+      }
+      @media screen and (min-width: $desktop) {
+        @include desktop-padding-x;
+      }
+    }
+  }
 }
 .button {
   margin-top: $px24;
 }
 .name-field {
   @include form-field;
+  @include font-regular;
+  padding: $px12;
+  &:focus {
+    border-color: $primary-color;
+    outline: none;
+  }
+  &__validate:invalid {
+    border-color: $form-error-color;
+    outline: none;
+  }
+  @media screen and (min-width: $tablet) {
+    padding: $px16;
+  }
 }
+
 .comment-field {
   resize: none;
   height: $px128;
   transition: height 0.3s ease;
+  @include font-regular;
   @include form-field;
+  padding: $px12;
+  &:focus {
+    border-color: $primary-color;
+    outline: none;
+  }
+  &validate:invalid {
+    border-color: $form-error-color;
+    outline: none;
+  }
   @media screen and (min-width: $tablet) {
     height: $px72;
+    padding: $px16;
   }
 }
 
 
 .form__label {
   @include form-label-sm;
-  font-family: 'AvenirNextLTPro-Regular', Arial, Helvetica, sans-serif;
-  color: $primary-color;
-  resize: none;
-  cursor: text;
+  padding-top: $px24;
   @media screen and (min-width: $tablet) {
     @include form-label-lg;
   }
+}
+
+// COMMENTS SECTION //
+
+.comments-section {
+  @include mobile-padding-x;
+ 
+
+  &__post {
+    display: flex;
+    padding: $px16 0;
+    width: 100%;
+    border-bottom: 1px solid $alt-secondary-color;
+    &--top-row {
+      display: flex;
+      justify-content: stretch;
+      width: 100%;
+    }
+    &--div {
+      width: 100%;
+    }
+    @media screen and (min-width: $tablet) {
+      @include tablet-padding-x;
+    }
+    @media screen and (min-width: $desktop) {
+      margin: 0 $px128;
+    }
+
+  }
+  &__user-pic {
+    @extend .submit-section__user-pic;
+    margin-top: 0;
+    flex-shrink: 0;
+    background-color: $alt-secondary-color;
+  }
+  &__name {
+    @include font-demi;
+    color: $primary-color;
+    margin: 0;
+    justify-content: space-between;
+    width: 50%;
+    
+  }
+  &__timestamp {
+    color: $tertiary-color;
+    margin: 0;
+    width: 50%;
+    padding: 0;
+    text-align: right;
+  }
+  &__body {
+    padding: 0;
+    width: 100%;
+  }
+
+  @media screen and (min-width: $tablet) {
+    @include tablet-padding-x;
+
+  }
+  @media screen and (min-width: $desktop) {
+    @include desktop-padding-x;
+    margin-bottom: $px36;
+  }
+
 }

@@ -3,23 +3,53 @@ const comments = [
     { name: "Emilie Beach", timestamp: "01/09/2021", commentText: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day." },
     { name: "Miles Acosta", timestamp: "12/20/2020", commentText: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough." }
 ];
+
+document.getElementById("submit-section__form").addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    let nameFieldValue = document.getElementById("name-field").value;
+    let commentFieldValue = document.getElementById("comment-field").value;
+    let newComment = {
+        name: nameFieldValue,
+        timestamp: new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit'
+          }),
+        commentText: commentFieldValue
+    };
+    comments.unshift(newComment);
+
+    renderComments();
+});
+
 renderComments();
 
 function displayComment(comment, commentCardEl) {
-
+    let userImg = document.createElement("img");
+    userImg.classList.add("comments-section__user-pic");
     let nameEl = document.createElement("h5");
     nameEl.textContent = comment.name;
     nameEl.classList.add("comments-section__name")
     let timestampEl = document.createElement("p");
+    let commentTopRow = document.createElement("div");
+    commentTopRow.classList.add("comments-section__post--top-row");
     timestampEl.textContent = comment.timestamp;
     timestampEl.classList.add("comments-section__timestamp")
     let commentEl = document.createElement("p");
     commentEl.textContent = comment.commentText;
     commentEl.classList.add("comments-section__body")
+    let commentTextEl = document.createElement("div");
+    commentTextEl.classList.add("comments-section__post--div");
 
-    commentCardEl.appendChild(nameEl);
-    commentCardEl.appendChild(timestampEl);
-    commentCardEl.appendChild(commentEl); 
+    commentTopRow.appendChild(nameEl);
+    commentTopRow.appendChild(timestampEl);
+    
+    commentTextEl.appendChild(commentTopRow);
+    commentTextEl.appendChild(commentEl); 
+    
+    commentCardEl.appendChild(userImg);
+    commentCardEl.appendChild(commentTextEl)
 };
 
 function renderComments() {
@@ -39,17 +69,3 @@ function renderComments() {
     document.getElementById("comment-field").value = "";
 };
 
-document.getElementById("submit-section__form").addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    let nameField = document.getElementById("name-field").value;
-    let commentField = document.getElementById("comment-field").value;
-    let newComment = {
-        name: nameField,
-        timestamp: new Date().toISOString(),
-        commentText: commentField
-    };
-    comments.unshift(newComment);
-
-    renderComments();
-});

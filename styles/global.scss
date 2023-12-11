@@ -4,24 +4,24 @@
 
 @font-face {
   font-family: "AvenirNextLTPro-Regular";
-  src: url("AvenirNextLTPro-Regular.woff2") format("woff2"), url("AvenirNextLTPro-Regular.woff") format("woff"),
-       url("../assets/Font/AvenirNextLTPro-Regular.otf") format("opentype");
+  src: url("/assets/Font/AvenirNextLTPro-Regular.woff2") format("woff2"), url("/assets/Font/AvenirNextLTPro-Regular.woff") format("woff"),
+       url("/assets/Font/AvenirNextLTPro-Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "AvenirNextLTPro-Bold";
-  src: url("AvenirNextLTPro-Bold.woff2") format("woff2"), url("AvenirNextLTPro-Bold.woff") format("woff"),
-       url("../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
+  src: url("/assets/Font/AvenirNextLTPro-Bold.woff2") format("woff2"), url("/assets/Font/AvenirNextLTPro-Bold.woff") format("woff"),
+       url("/assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "AvenirNextLTPro-Demi";
-  src: url("AvenirNextLTPro-Demi.woff2") format("woff2"), url("AvenirNextLTPro-Demi.woff") format("woff"),
-       url("../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
+  src: url("/assets/Font/AvenirNextLTPro-Demi.woff2") format("woff2"), url("/assets/Font/AvenirNextLTPro-Demi.woff") format("woff"),
+       url("/assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -61,15 +61,16 @@ h4 {
   line-height: 1.25rem;
 }
 .button {
-  @include font-regular;
-  letter-spacing: 0.1ch;
+  @include font-demi;
+  letter-spacing: 0.15ch;
   height: $px40;
   width: 100%;
   color: $secondary-color;
   background-color: $primary-color;
   border-radius: $px4;
   text-transform: uppercase;
-  font-size: $px10;
+  font-size: $px12;
+  padding: 0 $px32;
   &:hover {
     background-color: $hover-color;
   }
@@ -103,6 +104,7 @@ h4 {
     @media screen and (min-width: $tablet) {
       flex-direction: row;
       justify-content: left;
+      padding-left: 0;
     }
     @media screen and (min-width: $desktop) {
         padding-left: 0;
@@ -165,7 +167,7 @@ h4 {
   }
   @media screen and (min-width: $tablet) {
     justify-content: flex-start;
-    padding: 0;
+    @include tablet-padding-x;
 
   }
   @media screen and (min-width: $desktop) {

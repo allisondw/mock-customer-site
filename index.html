@@ -60,8 +60,8 @@
         <section class="submit-section">
             <article class="submit-section__new-comment">
                 <h2 class="submit-section__title">Join the Conversation</h2>
-                <div class="submit-section__new-comment">
-                    <!-- <img src="./assets/Images/Mohan-muruge.jpg" alt="user Mohan muruge" class="submit-section__user--pic"> -->
+                <div class="submit-section__form-div">
+                    <img src="./assets/Images/Mohan-muruge.jpg" alt="user Mohan muruge" class="submit-section__user-pic">
                     <form id="submit-section__form" class="submit-section__form">
 
                         <label for="name" class="form__label">NAME</label>
@@ -70,8 +70,9 @@
                         type="text" 
                         id="name-field" 
                         name="name-field" 
-                        placeholder="Enter your name"
+                        placeholder=" Enter your name"
                         class="name-field"
+                        required
                         />
 
                         <label for="comment" class="form__label">COMMENT</label>
@@ -79,8 +80,9 @@
                         <textarea 
                         id="comment-field" 
                         name="comment-field" 
-                        placeholder="Add a new comment"
-                        class="comment-field">
+                        placeholder=" Add a new comment"
+                        class="comment-field"
+                        required>
                         </textarea>
                         
                         <button type="submit" value="COMMENT" class="button">comment</button>
