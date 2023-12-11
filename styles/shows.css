@@ -1,0 +1,263 @@
+@font-face {
+  font-family: "AvenirNextLTPro-Regular";
+  src: url("/assets/Font/avenir-woffs/AvenirNextLTPro-Regular.woff2") format("woff2"), url("/assets/Font/avenir-woffs/AvenirNextLTPro-Regular.woff") format("woff"), url("/assets/Font/AvenirNextLTPro-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "AvenirNextLTPro-Bold";
+  src: url("/assets/Font/avenir-woffs/AvenirNextLTPro-Bold.woff2") format("woff2"), url("/assets/Font/avenir-woffs/AvenirNextLTPro-Bold.woff") format("woff"), url("/assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "AvenirNextLTPro-Demi";
+  src: url("/assets/Font/avenir-woffs/AvenirNextLTPro-Demi.woff2") format("woff2"), url("/assets/Font/avenir-woffs/AvenirNextLTPro-Demi.woff") format("woff"), url("/assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+.shows-hero {
+  height: 25vh;
+}
+@media screen and (min-width: 768px) {
+  .shows-hero {
+    height: 50vh;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows-hero {
+    height: 75vh;
+  }
+}
+.shows-hero__bg-img {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  padding-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  background-image: url(../assets/Images/hero-shows.jpg);
+  background-size: cover;
+  height: 100%;
+  justify-content: center;
+  position: relative;
+}
+.shows-hero__bg-img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(50, 50, 50, 0.5019607843);
+  z-index: 1;
+}
+@media screen and (min-width: 768px) {
+  .shows-hero__bg-img {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows-hero__bg-img {
+    padding-right: 8rem;
+    padding-left: 8rem;
+  }
+}
+.shows-hero__heading {
+  width: 75%;
+}
+@media screen and (min-width: 1280px) {
+  .shows-hero__heading {
+    width: 35%;
+  }
+}
+.shows-hero__h1 {
+  font-family: "AvenirNextLTPro-Demi", Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin: 0;
+  color: #FFFFFF;
+  position: relative;
+  z-index: 2;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .shows-hero__h1 {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows-hero__h1 {
+    padding: 0;
+  }
+}
+.shows-hero__h3 {
+  font-family: "AvenirNextLTPro-Regular", Arial, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  color: #FFFFFF;
+  margin: 2rem 0 0;
+  z-index: 3;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .shows-hero__h3 {
+    font-size: 1.5rem;
+  }
+}
+.shows-hero__player {
+  margin: 0 0 2rem;
+  z-index: 4;
+}
+
+.shows {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+.shows__title {
+  font-family: "AvenirNextLTPro-Demi", Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  margin: 0;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .shows__title {
+    padding: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .shows__container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-items: space-between;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows__container {
+    width: 75%;
+  }
+}
+.shows__card {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #E1E1E1;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+.shows__card--info-div {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .shows__card--info-div {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows__card--info-div {
+    align-items: self-end;
+  }
+}
+.shows__card-label--date, .shows__card-label--venue, .shows__card-label--location {
+  text-transform: uppercase;
+  color: #AFAFAF;
+  font-size: 0.625rem;
+  padding-bottom: 0.5rem;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .shows__card-label--date, .shows__card-label--venue, .shows__card-label--location {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .shows__card .label__first-row {
+    display: block;
+    padding-bottom: 2rem;
+  }
+}
+.shows__card-body--date {
+  font-family: "AvenirNextLTPro-Demi", Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+.shows__card-body--date, .shows__card-body--venue, .shows__card-body--location {
+  margin-bottom: 0.5rem;
+}
+@media screen and (min-width: 768px) {
+  .shows__card-body--date, .shows__card-body--venue, .shows__card-body--location {
+    padding-bottom: 0;
+  }
+}
+.shows__card__divider {
+  border-width: 1px;
+  border-color: #E1E1E1;
+}
+.shows__card--inner-div {
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .shows__card {
+    flex-direction: row;
+    align-items: self-end;
+    justify-content: space-between;
+    padding-top: 0.25rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows__card {
+    width: 60vw;
+  }
+}
+.shows__card--selected {
+  background-color: #E1E1E1;
+}
+.shows__card:hover {
+  background-color: #FAFAFA;
+}
+@media screen and (min-width: 768px) {
+  .shows__card .button {
+    margin: 0 0 0 3rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows__card .button {
+    margin: 1rem 0 0 3rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .shows {
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows {
+    flex-direction: row;
+    padding-right: 8rem;
+    padding-left: 8rem;
+    padding-top: 3rem;
+    padding-bottom: 2.25rem;
+  }
+}/*# sourceMappingURL=shows.css.map */

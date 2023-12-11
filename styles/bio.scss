@@ -1,30 +1,7 @@
-@use "partials/global" as *;
-@use "partials/variables" as *;
-@use "partials/mixins" as *;
+@use "./partials/global" as *;
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
 
-/* 4.6875vw = NOT A RANDOM NUMBER responsive size for content to be correct width & have 36px padding when at 768px */
-/* 81.25vw = NOT A RANDOM NUMBER responsive size for content to be correct width & have 36px padding when at 1280px */
-
-@font-face {
-  font-family: "AvenirNextLTPro-Regular";
-  src: url("../assets/Font/AvenirNextLTPro-Regular.otf") format("opentype"); 
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "AvenirNextLTPro-Demi";
-  src: url("../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "AvenirNextLTPro-Regular";
-  src: url("../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
-  font-weight: 600;
-  font-style: bold;
-}
 
 *,
 *::before,
@@ -37,6 +14,22 @@ body {
   margin: 0;
   color: $primary-color;
 }
+h2 {
+  @include font-demi;
+}
+
+p {
+  font-size: $px13;
+  line-height: $px20;
+  margin: 0;
+  padding-bottom: $px16;
+}
+h4 {
+  @include font-demi;
+  font-size: $px14;
+  margin: 0;
+  line-height: $px20;
+}
 @media screen and (min-width: $tablet) {
   h2 {
     font-size: $px36;
@@ -46,23 +39,11 @@ body {
     font-size: $px14;
   }
 }
-p {
-  font-size: $px13;
-  line-height: 1.25rem;
-  margin: 0;
-  padding-bottom: 1rem;
-}
-h4 {
-  @include font-demi;
-  font-size: $px14;
-  margin: 0;
-  line-height: 1.25rem;
-}
 
 // HERO SECTION
 .hero {
   &__bg-img {
-    padding-top: 5rem;
+    padding-top: $px96;
     position: relative;
     background-image: url(../assets/Images/hero-bio.jpg);
     background-size: cover;
@@ -75,7 +56,7 @@ h4 {
       right: 0;
       bottom: 0;
       left: 0;
-      background: rgba(0, 0, 0, 0.5);
+      background: $hero-bg-color;
       z-index: 1;
     }
     @media screen and (min-width: $tablet) {
@@ -85,25 +66,25 @@ h4 {
     }
     @media screen and (min-width: $desktop) {
       height: 70vh;
-      padding-left: 8rem;
+      @include desktop-padding-x;
     }
   }
 
   &__h1 {
+    @include font-demi;
     font-size: $px24;
-    line-height: 2rem;
+    line-height: $px32;
     margin: 0;
     color: $secondary-color;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-    padding-left: 1rem;
+    padding-top: $px96;
+    padding-bottom: $px96;
+    @include mobile-padding-x;
     position: relative;
     z-index: 2;
     @media screen and (min-width: $tablet) {
-      @include font-demi;
       font-size: $px60;
-      line-height: 4.25rem;
-      padding: 0 4.6875vw;
+      line-height: $px68;
+      @include tablet-padding-x;
     }
     @media screen and (min-width: $desktop) {
       padding: 0;
@@ -112,15 +93,19 @@ h4 {
 }
 // ABOUT SECTION
 .about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0;
-  padding: 0 1rem;
-
+  @include mobile-padding-x;
+  background-color: $secondary-color;
+  
   &__title {
     margin: 0;
-    padding: 1.5rem 0 1rem;
+    @include mobile-padding-y;
     @media screen and (min-width: $tablet) {
-      line-height: 2.75rem;
-      padding: 3rem 0 2.25rem;
+      line-height: $px44;
+      @include tablet-padding-y;
     }
   }
     &__blurb {
@@ -128,87 +113,78 @@ h4 {
         margin: 0;
         padding-bottom: 0;
         @media screen and (min-width: $tablet) {
-            padding: 0 4.6875vw 0.75rem;
-            font-size: 1.35rem;
-            line-height: 2rem;
+            @include tablet-padding-x;
+            font-size: 1.5rem;
+            line-height: $px32;
             &--attrib {
                 font-size: $px16;
-                padding-bottom: 2.25rem;
+                padding-bottom: $px36;
             }
         }
         @media screen and (min-width: $desktop) {
-            @include desktop-blurb;
-            &--attrib {
-                @include desktop-blurb;
-            }
+            @include desktop-padding-x;
         }
     }
     &__image {
-        width: 90vw;
-        padding: 0 0 1rem;
+        width: 100%;
+        padding: 0 0 $px16;
         @media screen and (min-width: $tablet) {
-            margin-bottom: 2.25rem;
-            padding: 0 4.6875vw;
+            margin-bottom: $px36;
+            @include tablet-padding-x;
         }
         @media screen and (min-width: $desktop) {
-            width: 81.25vw;
-            padding: 0 6rem;
+            // width: 81.25vw;
+            @include desktop-padding-x;
         }
     }
     &__h3 {
       @include font-demi;
       font-size: $px14;
       margin: 0;
-      padding: 1.5rem 0 1rem;
+      padding: $px24 0 $px16;
       @media screen and (min-width: $tablet) {
         @include font-demi;
-        padding: 1.5rem 4.6875vw 0;
+        @include tablet-padding-x;
         font-size: $px24;
       }
       @media screen and (min-width: $desktop) {
-        padding: 0;
+        @include desktop-padding-x;
       }
     }
     &__text {
         @media screen and (min-width: $tablet) {
             display: flex;
-            gap: 2rem;
-            padding: 1.5rem 4.6875vw 0; 
+            gap: $px32;
+            @include tablet-padding-x;
         }
         @media screen and (min-width: $desktop) {
-            padding: 2rem 0 0;
-            &--container {
-                width: 81.25vw;
-                padding: 2rem 6rem 1rem;
-            }
+            @include desktop-padding-x;
         }
     }
     @media screen and (min-width: $tablet) {
-        padding: 0 4.6875vw;
+        @include tablet-padding-x;
     }
     @media screen and (min-width: $desktop) {
-      padding: 0 8rem;
+      @include desktop-padding-x;
     }
 }
 
 // PHOTO GALLERY
 .gallery {
   background-color: $alt-tertiary-color;
-
+  padding: $px24 $px16 $px16;
   &__container {
     display: flex;
     flex-direction: column;
-    row-gap: 1rem;
-    // padding: 0 1rem;
+    align-items: center;
+    row-gap: $px16;
     margin: 0;
     @media screen and (min-width: $tablet) {
       flex-direction: row;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      width: 90.625vw;
-      margin: 0 auto 2rem;
-      gap: 1.5rem;
+      gap: $px24;
       padding: 0;
     }
     @media screen and (min-width: $desktop) {
@@ -217,7 +193,7 @@ h4 {
   }
   &__title {
     margin: 0;
-    padding: 1.5rem 1rem 1rem;
+    padding: 0 0 $px16;
     @media screen and (min-width: $tablet) {
         padding: $px48 0 $px36;
         margin: 0;
@@ -227,21 +203,179 @@ h4 {
     }
   }
   &__image {
-    width: 90vw;
+    width: 100%;
+    flex-grow: 1 2;
     @media screen and (min-width: $tablet) {
-      width: calc((90.625vw - 48px) / 3);
+      width: calc((100% - 48px) / 3);
     }
     @media screen and (min-width: $desktop) {
-      width: calc((81.25vw - 48px) / 3);
+      width: calc((81.25vw - $px48) / 3);
     }
   }
   @media screen and (min-width: $tablet) {
-    margin: 0 4.6875vw $px16;
+    @include tablet-padding-x;
   }
 
   @media screen and (min-width: $desktop) {
-    padding: 0 8rem;
+    @include desktop-padding-x;
     margin: 0;
   }
 }
+// submit SECTION
 
+.submit-section {
+  margin: 0;
+  @include mobile-padding-x;
+  @include mobile-padding-y;
+  @media screen and (min-width: $tablet) {
+    @include tablet-padding-x;
+  }
+  @media screen and (min-width: $desktop) {
+    @include desktop-padding-x;
+  }
+  
+  &__title {
+    margin: 0;
+  }
+  &__user-pic {
+    height: $px36;
+    width: $px36;
+    border-radius: 50%;
+    margin: $px40 $px16 0 0;
+    @media screen and (min-width: $tablet){
+      height: $px48;
+      width: $px48;
+    }
+  }
+  &__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: $px16;
+    border-bottom: 1px solid $alt-secondary-color;
+    &-div {
+      display: flex;
+      width: 100%;
+      justify-content: stretch;
+      @media screen and (min-width: $tablet) {
+        @include tablet-padding-x;
+      }
+      @media screen and (min-width: $desktop) {
+        @include desktop-padding-x;
+      }
+    }
+  }
+}
+.button {
+  margin-top: $px24;
+}
+.name-field {
+  @include form-field;
+  @include font-regular;
+  padding: $px12;
+  &:focus {
+    border-color: $primary-color;
+    outline: none;
+  }
+  &__validate:invalid {
+    border-color: $form-error-color;
+    outline: none;
+  }
+  @media screen and (min-width: $tablet) {
+    padding: $px16;
+  }
+}
+
+.comment-field {
+  resize: none;
+  height: $px128;
+  transition: height 0.3s ease;
+  @include font-regular;
+  @include form-field;
+  padding: $px12;
+  &:focus {
+    border-color: $primary-color;
+    outline: none;
+  }
+  &validate:invalid {
+    border-color: $form-error-color;
+    outline: none;
+  }
+  @media screen and (min-width: $tablet) {
+    height: $px72;
+    padding: $px16;
+  }
+}
+
+
+.form__label {
+  @include form-label-sm;
+  padding-top: $px24;
+  @media screen and (min-width: $tablet) {
+    @include form-label-lg;
+  }
+}
+
+// COMMENTS SECTION //
+
+.comments-section {
+  @include mobile-padding-x;
+ 
+
+  &__post {
+    display: flex;
+    padding: $px16 0;
+    width: 100%;
+    border-bottom: 1px solid $alt-secondary-color;
+    &--top-row {
+      display: flex;
+      justify-content: stretch;
+      width: 100%;
+    }
+    &--div {
+      width: 100%;
+    }
+    @media screen and (min-width: $tablet) {
+      @include tablet-padding-x;
+    }
+    @media screen and (min-width: $desktop) {
+      margin: 0 $px128;
+    }
+
+  }
+  &__user-pic {
+    @extend .submit-section__user-pic;
+    margin-top: 0;
+    flex-shrink: 0;
+    background-color: $alt-secondary-color;
+  }
+  &__name {
+    @include font-demi;
+    color: $primary-color;
+    margin: 0;
+    justify-content: space-between;
+    width: 50%;
+    
+  }
+  &__timestamp {
+    color: $tertiary-color;
+    margin: 0;
+    width: 50%;
+    padding: 0;
+    text-align: right;
+  }
+  &__body {
+    padding: 0;
+    width: 100%;
+  }
+
+  @media screen and (min-width: $tablet) {
+    @include tablet-padding-x;
+
+  }
+  @media screen and (min-width: $desktop) {
+    @include desktop-padding-x;
+    margin-bottom: $px36;
+  }
+
+}

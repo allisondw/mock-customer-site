@@ -1,3 +1,4 @@
+@use "./global" as *;
 @use "./variables" as *;
 
 
@@ -5,16 +6,79 @@
     padding: 1.75rem 0;
 }
 
-@mixin desktop-blurb {
-    width: 81.25vw;
-    padding: 1rem 6rem 0;
+@mixin desktop-blurb-padding-x {
+    padding-right: $px96;
+    padding-left: $px96;
 }
 
-@mixin tablet-nav-link {
+@mixin nav-link {
     padding: $px16;
     display: inline;
     margin: auto;
     text-align: center;
     width: 50vw;
-    color: $alt-tertiary-color;
+    color: $alt-secondary-color;
+    border-bottom: 0.25rem solid transparent;
+}
+
+@mixin form-label-sm {
+    text-transform: uppercase;
+    color: $tertiary-color;
+    font-size: $px10;
+    padding-bottom: .25rem;
+}
+
+@mixin form-label-lg {
+    text-transform: uppercase;
+    color: $tertiary-color;
+    font-size: $px12;
+    padding-bottom: $px4;
+}
+
+@mixin form-field {
+    width: 100%;
+    min-height: $px36;
+    border: 1px solid $alt-secondary-color;
+    border-radius: $px4;
+}
+
+@mixin mobile-padding-x {
+    padding-right: $px16;
+    padding-left: $px16;
+}
+
+@mixin mobile-padding-y {
+    padding-top: $px24;
+    padding-bottom: $px16;
+}
+
+@mixin tablet-padding-x {
+    padding-right: $px32;
+    padding-left: $px32;
+}
+
+@mixin tablet-padding-y {
+    padding-top: $px48;
+    padding-bottom: $px36;
+}
+
+@mixin desktop-padding-x {
+    padding-right: $px128;
+    padding-left: $px128;
+}
+
+@mixin desktop-padding-y {
+    padding-top: $px48;
+    padding-bottom: $px36;
+}
+
+@mixin nav-hover {
+    transition: border-bottom 0.5s ease-in-out;
+    border-bottom: 0.25rem solid white;
+    color: $secondary-color;
+}
+
+@mixin tablet-table-padding-x {
+    padding-right: $px18;
+    padding-left: $px18;
 }
