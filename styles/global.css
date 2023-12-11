@@ -21,21 +21,21 @@
 }
 @font-face {
   font-family: "AvenirNextLTPro-Regular";
-  src: url("/assets/Font/AvenirNextLTPro-Regular.woff2") format("woff2"), url("/assets/Font/AvenirNextLTPro-Regular.woff") format("woff"), url("/assets/Font/AvenirNextLTPro-Regular.otf") format("opentype");
+  src: url("/assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2"), url("/assets/fonts/AvenirNextLTPro-Regular.woff") format("woff"), url("/assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "AvenirNextLTPro-Bold";
-  src: url("/assets/Font/AvenirNextLTPro-Bold.woff2") format("woff2"), url("/assets/Font/AvenirNextLTPro-Bold.woff") format("woff"), url("/assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
+  src: url("/assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2"), url("/assets/fonts/AvenirNextLTPro-Bold.woff") format("woff"), url("/assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "AvenirNextLTPro-Demi";
-  src: url("/assets/Font/AvenirNextLTPro-Demi.woff2") format("woff2"), url("/assets/Font/AvenirNextLTPro-Demi.woff") format("woff"), url("/assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
+  src: url("/assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2"), url("/assets/fonts/AvenirNextLTPro-Demi.woff") format("woff"), url("/assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;

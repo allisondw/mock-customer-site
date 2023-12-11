@@ -65,7 +65,7 @@ h4 {
   }
 }
 .hero__bg-img {
-  padding-top: 6rem;
+  padding-top: 5rem;
   position: relative;
   background-image: url(../assets/Images/hero-bio.jpg);
   background-size: cover;
@@ -241,6 +241,8 @@ h4 {
 .gallery {
   background-color: #FAFAFA;
   padding: 1.5rem 1rem 1rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 .gallery__container {
   display: flex;
@@ -261,7 +263,7 @@ h4 {
 }
 @media screen and (min-width: 1280px) {
   .gallery__container {
-    width: 81.25vw;
+    justify-content: center;
   }
 }
 .gallery__title {
@@ -281,16 +283,15 @@ h4 {
 }
 .gallery__image {
   width: 100%;
-  flex-grow: 1 2;
 }
 @media screen and (min-width: 768px) {
   .gallery__image {
-    width: calc((100% - 48px) / 3);
+    width: calc((100vw - 112px) / 3);
   }
 }
 @media screen and (min-width: 1280px) {
   .gallery__image {
-    width: calc((81.25vw - 3rem) / 3);
+    width: calc((100vw - 304px) / 3);
   }
 }
 @media screen and (min-width: 768px) {
