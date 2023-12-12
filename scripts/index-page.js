@@ -1,12 +1,20 @@
-const comments = [
-    { name: "Connor Walton", timestamp: "02/17/2021", commentText: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains." },
-    { name: "Emilie Beach", timestamp: "01/09/2021", commentText: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day." },
-    { name: "Miles Acosta", timestamp: "12/20/2020", commentText: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough." }
-];
+
+
+let comments = [];
+async function displayComments() {
+    try {
+        comments = await myBandSiteApi.getComments();
+        console.log(comments);
+    } catch (error) {
+        console.log(error);
+    };
+    renderComments();
+}
+displayComments();
 
 document.getElementById("submit-section__form").addEventListener('submit', (event) => {
     event.preventDefault();
-
+    // this is where the postComment would go, need to figure out how to build
     let nameFieldValue = document.getElementById("name-field").value;
     let commentFieldValue = document.getElementById("comment-field").value;
     let newComment = {
@@ -23,21 +31,31 @@ document.getElementById("submit-section__form").addEventListener('submit', (even
     renderComments();
 });
 
-renderComments();
+function convertTimestampToDate(timestamp) {
+    const date = new Date(timestamp);
+    const month = date.getMonth() + 1; 
+    const day = date.getDate();
+    const year = date.getFullYear();
 
-function displayComment(comment, commentCardEl) {
+    const formattedMonth = month < 10 ? `0${month}` : month;
+    const formattedDay = day < 10 ? `0${day}` : day;
+
+    return `${formattedMonth}/${formattedDay}/${year}`;
+};
+
+function formatComment(commentObj, commentCardEl) {
     let userImg = document.createElement("img");
     userImg.classList.add("comments-section__user-pic");
     let nameEl = document.createElement("h5");
-    nameEl.textContent = comment.name;
+    nameEl.textContent = commentObj.name;
     nameEl.classList.add("comments-section__name")
     let timestampEl = document.createElement("p");
     let commentTopRow = document.createElement("div");
     commentTopRow.classList.add("comments-section__post--top-row");
-    timestampEl.textContent = comment.timestamp;
+    timestampEl.textContent = convertTimestampToDate(commentObj.timestamp);
     timestampEl.classList.add("comments-section__timestamp")
     let commentEl = document.createElement("p");
-    commentEl.textContent = comment.commentText;
+    commentEl.textContent = commentObj.comment;
     commentEl.classList.add("comments-section__body")
     let commentTextEl = document.createElement("div");
     commentTextEl.classList.add("comments-section__post--div");
@@ -61,7 +79,7 @@ function renderComments() {
         commentCard.classList.add("comments-section__post");
 
         
-        displayComment(comment, commentCard);
+        formatComment(comment, commentCard);
         commentSection.appendChild(commentCard);
     })
 
