@@ -1,10 +1,7 @@
-
-
 let comments = [];
 async function displayComments() {
     try {
         comments = await myBandSiteApi.getComments();
-        console.log(comments);
     } catch (error) {
         console.log(error);
     };
@@ -12,23 +9,33 @@ async function displayComments() {
 }
 displayComments();
 
+
+async function postNewComment(comment) {
+    try {
+        const postData = await myBandSiteApi.postComment(comment);
+        console.log(postData);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 document.getElementById("submit-section__form").addEventListener('submit', (event) => {
     event.preventDefault();
-    // this is where the postComment would go, need to figure out how to build
+
     let nameFieldValue = document.getElementById("name-field").value;
     let commentFieldValue = document.getElementById("comment-field").value;
     let newComment = {
         name: nameFieldValue,
-        timestamp: new Date().toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit'
-          }),
-        commentText: commentFieldValue
+        comment: commentFieldValue,
     };
-    comments.unshift(newComment);
+    let postedComment = postNewComment(newComment);
+    
 
-    renderComments();
+    if (postedComment) {
+        comments.unshift(newComment);
+        renderComments();
+        displayComments();
+    }
 });
 
 function convertTimestampToDate(timestamp) {
@@ -86,4 +93,3 @@ function renderComments() {
     document.getElementById("name-field").value = "";
     document.getElementById("comment-field").value = "";
 };
-
