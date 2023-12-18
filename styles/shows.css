@@ -196,6 +196,7 @@
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     padding: 0;
   }
 }
@@ -243,8 +244,7 @@
 }
 @media screen and (min-width: 768px) {
   .shows__card-body--venue {
-    align-self: flex-start;
-    flex: 3;
+    width: 6rem;
   }
 }
 .shows__card__divider {

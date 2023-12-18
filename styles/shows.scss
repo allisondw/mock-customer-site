@@ -142,7 +142,9 @@
         width: 100%;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
         padding: 0;
+
       }
       @media screen and (min-width: $desktop) {
         align-items: self-end;
@@ -188,8 +190,7 @@
       }
       &--venue {
         @media screen and (min-width: $tablet) {
-          align-self: flex-start;
-          flex: 3;
+          width: $px96;
         }
       }
     }

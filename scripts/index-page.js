@@ -13,13 +13,13 @@ displayComments();
 async function postNewComment(comment) {
     try {
         const postData = await myBandSiteApi.postComment(comment);
-        console.log(postData);
+        return postData;
     } catch (error) {
         console.log(error);
     }
 }
 
-document.getElementById("submit-section__form").addEventListener('submit', (event) => {
+document.getElementById("submit-section__form").addEventListener('submit', async (event) => {
     event.preventDefault();
 
     let nameFieldValue = document.getElementById("name-field").value;
@@ -28,7 +28,7 @@ document.getElementById("submit-section__form").addEventListener('submit', (even
         name: nameFieldValue,
         comment: commentFieldValue,
     };
-    let postedComment = postNewComment(newComment);
+    let postedComment = await postNewComment(newComment);
     
 
     if (postedComment) {
