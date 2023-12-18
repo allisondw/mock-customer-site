@@ -1,14 +1,29 @@
-const showsArr = [
-    { date: "Mon Sept 06 2021", venue: "Ronald Lane", location: "San Francisco" },
-    { date: "Tue Sept 21 2021", venue: "Pier 3 East", location: "San Francisco" },
-    { date: "Fri Oct 15 2021", venue: "View Lounge", location: "San Francisco" },
-    { date: "Sat Nov 06 2021", venue: "Hyatt Agency", location: "San Francisco" },
-    { date: "Fri Nov 26 2021", venue: "Moscow Center", location: "San Francisco" },
-    { date: "Wed Dec 15 2021", venue: "Press Club", location: "San Francisco" }
-];
+let showsArr = [];
+
+async function displayShows() {
+    try {
+        showsArr = await myBandSiteApi.getShows();
+        console.log(showsArr)
+    } catch (error) {
+        console.log(error);
+    };
+    renderShows();
+}
+displayShows();
 
 
-renderShows();
+function convertToFormattedDate(timestamp) {
+    const date = new Date(timestamp);
+
+    const dayOfWeek = date.toLocaleString('en-US', { weekday: 'short', timeZone: 'UTC' }); 
+    const month = date.toLocaleString('en-US', { month: 'short', timeZone: 'UTC' });
+    const day = date.getUTCDate();
+    const year = date.getUTCFullYear();
+
+    const formattedDay = day < 10 ? `0${day}` : day;
+
+    return `${dayOfWeek} ${month} ${formattedDay} ${year}`;
+}
 
 function renderShows() {
     let showsSection = document.querySelector("section.shows");
@@ -31,7 +46,7 @@ function renderShows() {
         
         let dateBody = document.createElement("p");
         dateBody.classList.add("shows__card-body--date");
-        dateBody.innerText = show.date;
+        dateBody.innerText = convertToFormattedDate(show.date);
 
 
         let venueTitle = document.createElement("h5");
@@ -39,7 +54,7 @@ function renderShows() {
         venueTitle.innerText = "venue";
         let venueBody = document.createElement("p");
         venueBody.classList.add("shows__card-body--venue");
-        venueBody.innerText = show.venue;
+        venueBody.innerText = show.place;
 
 
         let locationTitle = document.createElement("h5")
